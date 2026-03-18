@@ -1,0 +1,1803 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AJ Brownell — Body of Work · Director of Product Operations · Confluent</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  /* Confluent-inspired deep navy + electric blue */
+  --bg:       #0d1428;
+  --bg2:      #111e36;
+  --bg3:      #162040;
+  --bg4:      #1a2848;
+  --ink:      #eef2ff;
+  --ink2:     #b0c8e0;
+  --ink3:     #9ab0cc;
+  --gold:     #3b9eff;
+  --gold-dim: #1a4878;
+  --gold-bg:  rgba(59,158,255,0.07);
+  --gold-bdr: rgba(59,158,255,0.22);
+  --red:      #ff5577;
+  --red-bg:   rgba(255,85,119,0.08);
+  --red-bdr:  rgba(255,85,119,0.28);
+  --pink:     #ff80b0;
+  --pink-bg:  rgba(255,128,176,0.07);
+  --pink-bdr: rgba(255,128,176,0.28);
+  --green:    #00d4a0;
+  --green-bg: rgba(0,212,160,0.08);
+  --green-bdr:rgba(0,212,160,0.28);
+  --blue:     #3b9eff;
+  --blue-bg:  rgba(59,158,255,0.08);
+  --blue-bdr: rgba(59,158,255,0.28);
+  --amber:    #ffaa44;
+  --amber-bg: rgba(255,170,68,0.09);
+  --amber-border: rgba(255,170,68,0.32);
+  --border:   rgba(255,255,255,0.07);
+  --bmd:      rgba(59,158,255,0.16);
+  --r: 10px; --rsm: 7px;
+  --purple:   #8b7ffe;
+  --purple-bg:rgba(139,127,254,0.08);
+  --purple-bdr:rgba(139,127,254,0.28);
+}
+
+html { font-size: 16px; }
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: var(--bg);
+  color: var(--ink);
+  max-width: 1060px;
+  margin: 0 auto;
+  padding: 4rem 3.5rem 7rem;
+  line-height: 1.75;
+  font-size: 15.5px;
+}
+
+/* ── META HEADER ── */
+.meta-hdr {
+  border-bottom: 1px solid var(--border);
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  margin-bottom: 2rem;
+}
+.meta-eyebrow {
+  font-size: 14px; font-weight: 600;
+  letter-spacing: 0.08em; text-transform: uppercase;
+  color: var(--ink); margin-bottom: 1.2rem;
+}
+.meta-hdr h1 {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: clamp(2rem, 3.5vw, 2.8rem); font-weight: 700; line-height: 1.15;
+  color: var(--ink); margin-bottom: 1rem;
+}
+.meta-hdr p {
+  font-size: 15.5px; color: var(--ink2);
+  line-height: 1.85; max-width: 700px;
+}
+
+/* ── CHAPTER ── */
+.chapter {
+  margin-bottom: 6rem;
+  padding-bottom: 5rem;
+  border-bottom: 1px solid var(--border);
+}
+.chapter:last-child { border-bottom: none; }
+
+.ch-eyebrow {
+  font-size: 11px; font-weight: 600;
+  letter-spacing: 0.16em; text-transform: uppercase;
+  color: var(--blue); margin-bottom: 0.8rem;
+  display: flex; align-items: center; gap: 10px;
+}
+.ch-eyebrow::before {
+  content: ''; display: inline-block;
+  width: 28px; height: 2px; background: var(--blue);
+}
+
+.ch-title {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 2.1rem; font-weight: 700;
+  color: var(--ink); margin-bottom: 1.8rem;
+  line-height: 1.2;
+}
+
+/* ── SLIDE BLOCKS ── */
+.slide-block {
+  margin-bottom: 1.6rem;
+}
+.slide-block + .slide-block--outcome {
+  margin-top: 0;
+  padding-top: 1.6rem;
+  border-top: 1px solid var(--border);
+}
+.slide-label {
+  font-size: 10.5px; font-weight: 600;
+  letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--ink3); margin-bottom: 1.3rem;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--border);
+}
+
+/* ── DIVIDER CONTENT ── */
+.problem-stated {
+  background: var(--bg3);
+  border: 1px solid var(--bmd);
+  border-radius: var(--r);
+  padding: 1.8rem 2rem;
+  margin-bottom: 1.5rem;
+}
+.ps-label {
+  font-size: 10px; font-weight: 600;
+  letter-spacing: 0.13em; text-transform: uppercase;
+  color: var(--blue); margin-bottom: 0.85rem;
+}
+.ps-text {
+  font-size: 15.5px; color: var(--ink2);
+  line-height: 1.85;
+}
+
+.why-matters {
+  background: var(--blue-bg);
+  border-left: 3px solid var(--blue);
+  border-radius: 0 var(--r) var(--r) 0;
+  padding: 1.4rem 1.8rem;
+  margin-bottom: 0.5rem;
+}
+.wm-label {
+  font-size: 10px; font-weight: 600;
+  letter-spacing: 0.13em; text-transform: uppercase;
+  color: var(--blue); margin-bottom: 0.75rem;
+}
+.wm-text {
+  font-family: 'Space Grotesk', sans-serif;
+  font-style: italic;
+  font-size: 17px; color: var(--ink);
+  line-height: 1.7;
+}
+
+/* ── INSIGHT CONTENT ── */
+.two-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  margin-bottom: 1.4rem;
+}
+@media (max-width: 600px) { .two-col { grid-template-columns: 1fr; } }
+
+.content-card {
+  background: var(--bg3);
+  border: 1px solid var(--border);
+  border-radius: var(--r);
+  padding: 1.6rem 1.8rem;
+}
+.cc-label {
+  font-size: 10px; font-weight: 600;
+  letter-spacing: 0.13em; text-transform: uppercase;
+  color: var(--blue); margin-bottom: 0.9rem;
+}
+.cc-text {
+  font-size: 14.5px; color: var(--ink2);
+  line-height: 1.85;
+}
+.cc-text em { color: var(--ink); font-style: italic; }
+.cc-text strong { color: var(--ink); font-weight: 500; }
+
+.decision-card {
+  background: var(--bg3);
+  border: 1px solid var(--bmd);
+  border-radius: var(--r);
+  padding: 1.6rem 1.8rem;
+  border-left: 3px solid var(--blue);
+}
+
+/* ── INFLUENCE TAG ── */
+.influence {
+  display: inline-flex; align-items: center; gap: 6px;
+  font-size: 11.5px; font-weight: 500;
+  border-radius: 5px;
+  padding: 4px 11px;
+  margin: 7px 5px 0 0;
+  /* default: thinker/person — blue */
+  color: var(--blue); background: var(--blue-bg);
+  border: 1px solid var(--blue-bdr);
+}
+/* Books — gold */
+.influence.ib-book {
+  color: var(--gold);
+  background: var(--gold-bg);
+  border-color: var(--gold-bdr);
+}
+/* Methods / practices — green */
+.influence.ib-method {
+  color: var(--green);
+  background: var(--green-bg);
+  border-color: var(--green-bdr);
+}
+/* JD Artifacts — amber */
+.influence.ib-artifact {
+  color: var(--amber);
+  background: var(--amber-bg);
+  border-color: var(--amber-border);
+}
+/* Capabilities — purple */
+.influence.ib-capability {
+  color: var(--purple);
+  background: var(--purple-bg);
+  border-color: var(--purple-bdr);
+}
+.influences { margin-top: 10px; }
+
+.bl-artifact {
+  display: inline-block;
+  font-size: 9px; font-weight: 600;
+  letter-spacing: 0.08em; text-transform: uppercase;
+  color: var(--amber); background: var(--amber-bg);
+  border: 1px solid var(--amber-border);
+  border-radius: 3px;
+  padding: 1px 6px;
+  margin-top: 4px;
+}
+
+/* ── DIAGRAM BLOCK ── */
+.diagram-note {
+  background: var(--blue-bg);
+  border: 1px solid var(--blue-bdr);
+  border-radius: var(--rsm);
+  padding: 0.75rem 1rem;
+  font-size: 12px; color: var(--blue);
+  line-height: 1.55;
+  margin-top: 10px;
+}
+.diagram-note strong { color: var(--blue); font-weight: 600; }
+
+/* ── CHAIN DIAGRAM ── */
+.chain {
+  display: flex; flex-wrap: wrap;
+  align-items: center; gap: 0;
+  margin: 1rem 0 0.5rem;
+}
+.chain-node {
+  font-size: 10.5px; font-weight: 500;
+  padding: 5px 10px;
+  border-radius: 4px;
+  white-space: nowrap;
+}
+.chain-arrow {
+  color: var(--ink3); font-size: 12px;
+  padding: 0 3px; flex-shrink: 0;
+}
+.cn-1 { background: rgba(200,165,90,0.15); color: var(--gold); border: 1px solid var(--gold-bdr); }
+.cn-2 { background: rgba(90,144,96,0.12); color: #8dc898; border: 1px solid var(--green-bdr); }
+.cn-3 { background: rgba(74,128,184,0.12); color: #8ab0d8; border: 1px solid var(--blue-bdr); }
+.cn-4 { background: rgba(192,64,48,0.1); color: #e09080; border: 1px solid var(--red-bdr); }
+.cn-5 { background: rgba(160,100,180,0.12); color: #c098d8; border: 1px solid rgba(160,100,180,0.3); }
+.cn-6 { background: rgba(200,165,90,0.08); color: var(--ink2); border: 1px solid var(--border); }
+.cn-7 { background: rgba(90,144,96,0.08); color: var(--ink2); border: 1px solid var(--border); }
+.cn-8 { background: rgba(74,128,184,0.08); color: var(--ink2); border: 1px solid var(--border); }
+
+/* ── OUTCOME LISTS ── */
+.built-list { list-style: none; padding: 0; margin-bottom: 1.2rem; }
+.built-list li {
+  display: flex; gap: 12px;
+  padding: 0.9rem 0;
+  border-bottom: 1px solid var(--border);
+  align-items: flex-start;
+}
+.built-list li:last-child { border-bottom: none; }
+.bl-num {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 14px; font-weight: 700;
+  color: var(--blue); flex-shrink: 0;
+  padding-top: 1px; min-width: 22px;
+}
+.bl-content { flex: 1; }
+.bl-title {
+  font-size: 14.5px; font-weight: 600;
+  color: var(--ink); margin-bottom: 4px;
+}
+.bl-desc { font-size: 13.5px; color: var(--ink2); line-height: 1.75; }
+
+.outcome-list { list-style: none; padding: 0; }
+.outcome-list li {
+  display: flex; gap: 10px;
+  padding: 0.85rem 0;
+  border-bottom: 1px solid var(--border);
+  font-size: 14.5px; color: var(--ink2);
+  line-height: 1.8;
+  align-items: flex-start;
+}
+.outcome-list li:last-child { border-bottom: none; }
+.ol-bar {
+  width: 3px; flex-shrink: 0;
+  background: var(--blue);
+  border-radius: 2px;
+  margin-top: 4px;
+  align-self: stretch;
+}
+.outcome-list li strong { color: var(--ink); font-weight: 500; }
+
+/* ── DIFFERENTLY ── */
+.differently {
+  background: var(--bg2);
+  border-top: 1px solid var(--gold-dim);
+  border-radius: var(--rsm);
+  padding: 1.4rem 1.8rem;
+  margin-top: 1.6rem;
+}
+.diff-label {
+  font-size: 10px; font-weight: 600;
+  letter-spacing: 0.13em; text-transform: uppercase;
+  color: var(--blue); margin-bottom: 0.65rem;
+}
+.diff-text { font-size: 14px; color: var(--ink2); line-height: 1.8; }
+.diff-lesson {
+  font-family: 'Space Grotesk', sans-serif;
+  font-style: italic;
+  font-size: 14px; color: var(--blue);
+  margin-top: 0.75rem; line-height: 1.65;
+}
+
+/* ── LOOP DIAGRAM ── */
+.loop-diagram {
+  background: var(--bg3);
+  border: 1px solid var(--bmd);
+  border-radius: var(--r);
+  padding: 1.5rem 1.7rem;
+  margin-top: 1.2rem;
+}
+.ld-label {
+  font-size: 10px; font-weight: 600;
+  letter-spacing: 0.13em; text-transform: uppercase;
+  color: var(--blue); margin-bottom: 1.2rem;
+}
+.loop-steps {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.loop-step {
+  display: flex; gap: 12px; align-items: flex-start;
+}
+.ls-num {
+  width: 28px; height: 28px;
+  border-radius: 50%;
+  background: var(--gold-dim);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 12px; font-weight: 700; color: var(--blue);
+  flex-shrink: 0;
+}
+.ls-content { flex: 1; }
+.ls-name { font-size: 14px; font-weight: 600; color: var(--ink); margin-bottom: 2px; }
+.ls-desc { font-size: 13px; color: var(--ink3); line-height: 1.6; }
+.loop-connector {
+  width: 1px; height: 10px;
+  background: var(--gold-dim);
+  margin-left: 11px;
+}
+
+/* ── STACK DIAGRAM ── */
+.stack {
+  display: flex; flex-direction: column; gap: 4px;
+  margin-top: 1rem;
+}
+.stack-layer {
+  display: flex; align-items: center; gap: 12px;
+  padding: 0.8rem 1.1rem;
+  border-radius: var(--rsm);
+  border: 1px solid var(--border);
+}
+.sl-tag {
+  font-size: 10px; font-weight: 600;
+  letter-spacing: 0.1em; text-transform: uppercase;
+  color: var(--blue); min-width: 80px; flex-shrink: 0;
+}
+.sl-name { font-size: 13.5px; font-weight: 500; color: var(--ink); }
+.sl-desc { font-size: 12px; color: var(--ink3); margin-left: auto; text-align: right; }
+.sl-1 { background: rgba(200,165,90,0.06); }
+.sl-2 { background: rgba(90,144,96,0.06); }
+.sl-3 { background: rgba(74,128,184,0.06); }
+.sl-4 { background: rgba(160,100,180,0.06); }
+
+/* ── PHASE DIAGRAM ── */
+.phases {
+  display: flex; flex-direction: column; gap: 4px;
+  margin-top: 1rem;
+}
+.phase-row {
+  display: flex; align-items: flex-start; gap: 12px;
+  padding: 0.9rem 1.1rem;
+  background: var(--bg3);
+  border-radius: var(--rsm);
+  border: 1px solid var(--border);
+}
+.ph-num {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 14px; color: var(--gold);
+  flex-shrink: 0; min-width: 22px; padding-top: 1px;
+}
+.ph-content { flex: 1; }
+.ph-name { font-size: 14px; font-weight: 600; color: var(--ink); margin-bottom: 4px; }
+.ph-desc { font-size: 13px; color: var(--ink3); line-height: 1.6; }
+.ph-insight { font-size: 12.5px; color: var(--blue); font-style: italic; margin-top: 5px; }
+
+/* ── PRODUCT OS BRIDGE ── */
+.bridge-section {
+  background: var(--bg2);
+  border: 1px solid var(--bmd);
+  border-radius: 12px;
+  padding: 2.8rem 2.8rem 2.4rem;
+  margin-bottom: 5rem;
+  position: relative;
+  overflow: hidden;
+}
+.bridge-section::before {
+  content: '';
+  position: absolute; top: 0; left: 0;
+  width: 100%; height: 3px;
+  background: linear-gradient(90deg, var(--blue) 0%, var(--purple) 55%, transparent 100%);
+}
+.bridge-eyebrow {
+  font-size: 11px; font-weight: 600;
+  letter-spacing: 0.16em; text-transform: uppercase;
+  color: var(--blue); margin-bottom: 1rem;
+}
+.bridge-title {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 1.7rem; font-weight: 600;
+  color: var(--ink); line-height: 1.22;
+  margin-bottom: 1.1rem;
+}
+.bridge-body {
+  font-size: 15.5px; color: var(--ink2);
+  line-height: 1.9; max-width: 760px;
+  margin-bottom: 2.2rem;
+}
+.bridge-body strong { color: var(--ink); font-weight: 500; }
+.bridge-body em { color: var(--ink); font-style: italic; }
+
+/* OS Diagram */
+.os-diagram {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 0;
+  margin: 0 0 1.5rem;
+}
+.os-layer {
+  display: flex;
+  align-items: stretch;
+  gap: 0;
+}
+.os-box {
+  flex: 1;
+  border: 1px solid var(--bmd);
+  border-radius: var(--rsm);
+  padding: 1rem 1.3rem;
+  position: relative;
+}
+.os-box-label {
+  font-size: 10.5px; font-weight: 700;
+  letter-spacing: 0.12em; text-transform: uppercase;
+  margin-bottom: 4px;
+}
+.os-box-name {
+  font-size: 14.5px; font-weight: 600;
+  color: var(--ink); margin-bottom: 5px;
+}
+.os-box-signals {
+  font-size: 12.5px; color: var(--ink3);
+  line-height: 1.5;
+}
+.os-arrow {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 4px 0;
+  color: rgba(59,158,255,0.75);
+  font-size: 20px;
+  line-height: 1;
+}
+
+.os-l1 { background: rgba(59,158,255,0.07); border-color: var(--blue-bdr); }
+.os-l1 .os-box-label { color: var(--blue); }
+.os-l2 { background: rgba(0,212,160,0.07); border-color: var(--green-bdr); }
+.os-l2 .os-box-label { color: var(--green); }
+.os-l3 { background: rgba(255,170,68,0.07); border-color: var(--amber-border); }
+.os-l3 .os-box-label { color: var(--amber); }
+.os-l4 { background: rgba(124,92,252,0.07); border-color: var(--purple-bdr); }
+.os-l4 .os-box-label { color: var(--purple); }
+.os-l5 { background: rgba(255,128,176,0.07); border-color: var(--pink-bdr); }
+.os-l5 .os-box-label { color: var(--pink); }
+
+.os-map-note {
+  font-size: 13px; color: var(--ink3);
+  line-height: 1.75;
+  border-top: 1px solid var(--border);
+  padding-top: 1rem;
+  margin-top: 0.5rem;
+}
+.os-map-note strong { color: var(--ink2); font-weight: 500; }
+
+/* ── SURVIVAL CALLOUT ── */
+.survival {
+  background: var(--green-bg);
+  border: 1px solid var(--green-bdr);
+  border-radius: var(--r);
+  padding: 1.5rem 1.8rem;
+  margin-top: 1.2rem;
+}
+.sv-label {
+  font-size: 10px; font-weight: 600;
+  letter-spacing: 0.13em; text-transform: uppercase;
+  color: var(--green); margin-bottom: 0.65rem;
+}
+.sv-text {
+  font-size: 14.5px; color: #6de8c0;
+  line-height: 1.8;
+}
+.sv-text strong { font-weight: 500; }
+
+/* ── WHITE SECTION ── */
+/* Used for alternating light sections — improves scannability and print legibility */
+.section-light {
+  background: var(--bg3);
+  color: #1a2035;
+  border-radius: var(--r);
+  padding: 2.5rem 2.8rem;
+  margin-bottom: 2rem;
+  border: 1px solid rgba(0,0,0,0.06);
+}
+.section-light .cc-label,
+.section-light .ps-label,
+.section-light .cc-text,
+.section-light .ps-text,
+.section-light .bl-title,
+.section-light .bl-desc,
+.section-light .outcome-list li {
+  color: #2a3550;
+}
+.section-light .cc-label,
+.section-light .ps-label { color: #1a6bbf; }
+.section-light .outcome-list li strong,
+.section-light .bl-title { color: #111a2e; }
+.section-light .ol-bar { background: #1a6bbf; }
+.section-light .border { border-color: rgba(0,0,0,0.08); }
+
+/* Outcome slides use a lighter elevated surface */
+.slide-block--outcome .content-card {
+  background: rgba(255,255,255,0.04);
+  border-color: rgba(255,255,255,0.1);
+}
+.slide-block--outcome .built-list li {
+  border-bottom-color: rgba(255,255,255,0.06);
+}
+.slide-block--outcome .outcome-list li {
+  border-bottom-color: rgba(255,255,255,0.06);
+}
+.slide-block--outcome .bl-title { color: var(--ink); font-weight: 600; }
+.slide-block--outcome .outcome-list li strong { color: var(--ink); }
+
+/* ── PRINT STYLES ── */
+@media print {
+  :root {
+    /* Switch to light/print palette */
+    --bg:    #ffffff;
+    --bg2:   #f4f7ff;
+    --bg3:   #ffffff;
+    --bg4:   #e4eaf8;
+    --ink:   #0d1a2e;
+    --ink2:  #1e3050;
+    --ink3:  #3a5070;
+    --blue:  #1a6bbf;
+    --gold:  #1a6bbf;
+    --gold-dim: #5a8ec8;
+    --gold-bg:  rgba(26,107,191,0.06);
+    --gold-bdr: rgba(26,107,191,0.2);
+    --blue-bg:  rgba(26,107,191,0.06);
+    --blue-bdr: rgba(26,107,191,0.2);
+    --border: rgba(0,0,0,0.08);
+    --bmd:   rgba(26,107,191,0.15);
+    --green: #0a8c6a;
+    --green-bg: rgba(10,140,106,0.06);
+    --green-bdr: rgba(10,140,106,0.2);
+    --red:   #c0384a;
+    --red-bg: rgba(192,56,74,0.06);
+    --red-bdr: rgba(192,56,74,0.2);
+    --pink: #d4608a;
+    --pink-bg: rgba(212,96,138,0.07);
+    --pink-bdr: rgba(212,96,138,0.25);
+    --amber: #c07020;
+    --amber-bg: rgba(192,112,32,0.06);
+    --amber-border: rgba(192,112,32,0.22);
+    --purple: #5a44cc;
+    --purple-bg: rgba(90,68,204,0.06);
+    --purple-bdr: rgba(90,68,204,0.22);
+  }
+
+  body {
+    background: #ffffff;
+    color: #0d1a2e;
+    max-width: 100%;
+    padding: 0;
+    font-size: 11pt;
+    line-height: 1.6;
+  }
+
+  /* Page setup */
+  @page {
+    size: A4;
+    margin: 18mm 16mm 18mm 16mm;
+  }
+
+  /* Page break rules */
+  .chapter { page-break-before: always; }
+  .chapter:first-of-type { page-break-before: auto; }
+  .slide-block { page-break-inside: avoid; }
+  .slide-block--outcome { page-break-before: always; }
+  .two-col { page-break-inside: avoid; }
+  .bridge-section { page-break-inside: avoid; }
+  .differently { page-break-inside: avoid; page-break-before: avoid; }
+  .survival { page-break-inside: avoid; }
+  h1, h2, .ch-title { page-break-after: avoid; }
+  .built-list li { page-break-inside: avoid; }
+  .outcome-list li { page-break-inside: avoid; }
+  .ch-eyebrow { page-break-after: avoid; }
+  .wm-text { page-break-inside: avoid; }
+  .why-matters { page-break-inside: avoid; page-break-after: avoid; }
+  .content-card { page-break-inside: avoid; }
+  .decision-card { page-break-inside: avoid; }
+  .bl-artifact { display: inline; }
+
+  .no-print { display: none !important; }
+  #loop-arc { display: none !important; }
+  script { display: none; }
+
+  /* Backgrounds and borders */
+  .meta-hdr { border-top: 3pt solid #1a6bbf; }
+  .bridge-section::before { background: #1a6bbf; }
+  .bridge-section { border: 1px solid rgba(26,107,191,0.2); border-radius: 8pt; }
+  .content-card { border: 1px solid rgba(0,0,0,0.1); }
+  .decision-card { border-left: 3pt solid #1a6bbf; }
+  .why-matters { border-left: 3pt solid #1a6bbf; }
+
+  /* Font sizes for print */
+  .ch-title { font-size: 20pt; }
+  .bridge-title { font-size: 16pt; }
+  .meta-hdr h1 { font-size: 22pt; }
+  .ps-text, .bridge-body, .cc-text { font-size: 10.5pt; }
+  .wm-text { font-size: 11.5pt; }
+  .outcome-list li, .built-list .bl-desc { font-size: 10pt; }
+  .influence { font-size: 9pt; padding: 2pt 8pt; }
+  .bl-artifact { font-size: 8pt; }
+}
+</style>
+</head>
+<body>
+
+
+<div class="meta-hdr">
+
+  <div style="display:grid;grid-template-columns:1fr auto;gap:2rem;align-items:end;margin-bottom:2rem;">
+    <div>
+      <div style="font-family:'Space Grotesk',sans-serif;font-size:clamp(1.8rem,3vw,2.6rem);font-weight:700;color:var(--ink);line-height:1.1;letter-spacing:-0.01em;">AJ Brownell</div>
+      <div style="font-size:12px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:var(--blue);margin-top:0.5rem;">Operating Model & Product Ecosystem Architect</div>
+    </div>
+    <div style="text-align:right;font-size:11px;color:var(--ink3);letter-spacing:0.06em;text-transform:uppercase;line-height:1.8;">
+      Original Work<br>
+      First Principles<br>
+      Cross-Context Validated
+    </div>
+  </div>
+
+  <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:1.5rem;border-top:1px solid var(--border);padding-top:1.5rem;">
+
+    <div>
+      <div style="font-size:9px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--blue);margin-bottom:0.5rem;">Origin</div>
+      <div style="font-size:13.5px;color:var(--ink2);line-height:1.75;">Built from first principles — diagnosed from observed failure, designed under constraint, and refined through years of iteration without the luxury of formal mandates.</div>
+    </div>
+
+    <div>
+      <div style="font-size:9px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--blue);margin-bottom:0.5rem;">Evidence</div>
+      <div style="font-size:13.5px;color:var(--ink2);line-height:1.75;">Stress-tested across multiple environments. The four case studies that follow are the evidence base from which the system was derived — not illustrations of it.</div>
+    </div>
+
+    <div>
+      <div style="font-size:9px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--blue);margin-bottom:0.5rem;">External Record</div>
+      <div style="font-size:13.5px;color:var(--ink2);line-height:1.75;">This body of work has been externally published and forms the foundation for a shipped enterprise product.</div>
+    </div>
+
+  </div>
+
+</div>
+
+
+
+
+<!-- ════════════════════════════════════════════════════════
+     DOCUMENT MAP
+════════════════════════════════════════════════════════ -->
+
+<div style="margin-bottom:2.5rem;">
+  <div style="font-size:9px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--ink3);margin-bottom:1rem;">Document structure</div>
+  <div style="display:grid;grid-template-columns:repeat(7,1fr);gap:8px;">
+
+    <div style="background:rgba(59,158,255,0.07);border:1px solid rgba(59,158,255,0.22);border-top:3px solid var(--blue);border-radius:6px;padding:10px 12px;">
+      <div style="font-size:8.5px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--blue);margin-bottom:5px;">01</div>
+      <div style="font-size:11px;font-weight:600;color:var(--ink);line-height:1.3;">Product Operating System</div>
+    </div>
+
+    <div style="background:rgba(255,170,68,0.07);border:1px solid var(--amber-border);border-top:3px solid var(--amber);border-radius:6px;padding:10px 12px;">
+      <div style="font-size:8.5px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--amber);margin-bottom:5px;">Case Study 01</div>
+      <div style="font-size:11px;font-weight:600;color:var(--ink);line-height:1.3;">The Alignment Problem</div>
+    </div>
+
+    <div style="background:rgba(0,212,160,0.07);border:1px solid var(--green-bdr);border-top:3px solid var(--green);border-radius:6px;padding:10px 12px;">
+      <div style="font-size:8.5px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--green);margin-bottom:5px;">Case Study 02</div>
+      <div style="font-size:11px;font-weight:600;color:var(--ink);line-height:1.3;">The Signal Problem</div>
+    </div>
+
+    <div style="background:rgba(139,127,254,0.07);border:1px solid var(--purple-bdr);border-top:3px solid var(--purple);border-radius:6px;padding:10px 12px;">
+      <div style="font-size:8.5px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--purple);margin-bottom:5px;">Case Study 03</div>
+      <div style="font-size:11px;font-weight:600;color:var(--ink);line-height:1.3;">The Reinvention Problem</div>
+    </div>
+
+    <div style="background:rgba(255,128,176,0.07);border:1px solid var(--pink-bdr);border-top:3px solid var(--pink);border-radius:6px;padding:10px 12px;">
+      <div style="font-size:8.5px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--pink);margin-bottom:5px;">Case Study 04</div>
+      <div style="font-size:11px;font-weight:600;color:var(--ink);line-height:1.3;">The Adoption Problem</div>
+    </div>
+
+    <div style="background:rgba(59,158,255,0.07);border:1px solid rgba(59,158,255,0.22);border-top:3px solid var(--blue);border-radius:6px;padding:10px 12px;">
+      <div style="font-size:8.5px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--blue);margin-bottom:5px;">06</div>
+      <div style="font-size:11px;font-weight:600;color:var(--ink);line-height:1.3;">Operating Principles</div>
+    </div>
+
+    <div style="background:rgba(59,158,255,0.07);border:1px solid rgba(59,158,255,0.22);border-top:3px solid var(--blue);border-radius:6px;padding:10px 12px;">
+      <div style="font-size:8.5px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--blue);margin-bottom:5px;">07</div>
+      <div style="font-size:11px;font-weight:600;color:var(--ink);line-height:1.3;">Published Work & Shipped Product</div>
+    </div>
+
+  </div>
+</div>
+
+
+<!-- ════════════════════════════════════════════════════════
+     BRIDGE: THE PRODUCT OPERATING SYSTEM
+════════════════════════════════════════════════════════ -->
+
+<div class="bridge-section">
+  <div class="bridge-eyebrow">Product Operating System</div>
+  <div class="bridge-title">The system where what you learn shapes what you build — and what you build improves what you learn.</div>
+  <div class="bridge-body">
+
+    <div style="display:flex;flex-direction:column;gap:1rem;margin-bottom:1.6rem;">
+      <div style="font-size:14px;color:var(--ink2);line-height:1.75;"><strong>Poor product organizations</strong> have zero structure for consistently acting on insights — they depend on PM heroics.</div>
+      <div style="font-size:14px;color:var(--ink2);line-height:1.75;"><strong>Good product organizations</strong> run a pipeline — signals flow in, decisions and features flow out. This may appear to be effective initially, but the intelligence generated never compounds.</div>
+      <div style="font-size:14px;color:var(--ink2);line-height:1.75;"><strong>A great product organization</strong> closes the loop. Outcomes from decisions and new features create new signals and feedback. These signals form new insights, informing subsequent iterations. Every PM's discovery compounds and cross-pollinates. The full breadth of intelligence becomes available to every PM — across the full product suite.</div>
+      <div style="font-size:14px;color:var(--ink2);line-height:1.75;">In a multi-product org the stakes are higher — complexity doesn't add linearly, it multiplies. Especially when AI capabilities are being embedded across every product layer simultaneously, often while still being treated as a separate product. Siloed assumptions don't just slow you down. They compound against you.</div>
+      <div style="font-size:14px;color:var(--ink2);line-height:1.75;">The architecture below is designed to close that gap.</div>
+    </div>
+
+  </div>
+
+  <div style="position:relative;margin-bottom:1.5rem;">
+
+    <!-- Row 1: Signals -->
+    <div style="display:grid;grid-template-columns:1fr 60px 1fr;gap:0;align-items:stretch;">
+      <div class="os-box os-l1" id="os-signals">
+        <div class="os-box-label">Product Signals</div>
+        <div class="os-box-name">What the world is telling us</div>
+        <div class="os-box-signals">customer · usage · market · operational</div>
+      </div>
+      <div></div>
+      <div style="display:flex;flex-direction:column;justify-content:center;padding:0.4rem 0;">
+        <div style="font-size:9px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--blue);margin-bottom:4px;">Product Signals</div>
+        <div style="font-size:11.5px;color:var(--ink3);line-height:1.6;">Outcome evidence and new usage data re-enter here. Each PM's discovery also feeds back as signal — the commons compounds continuously across every cycle.</div>
+      </div>
+    </div>
+
+    <div style="display:grid;grid-template-columns:1fr 60px 1fr;gap:0;">
+      <div class="os-arrow">↓</div>
+      <div></div>
+      <div></div>
+    </div>
+
+    <!-- Row 2: Insight -->
+    <div style="display:grid;grid-template-columns:1fr 60px 1fr;gap:0;align-items:stretch;">
+      <div class="os-box os-l2">
+        <div class="os-box-label">Product Insight</div>
+        <div class="os-box-name">What the signals mean</div>
+        <div class="os-box-signals">research · analytics · experimentation</div>
+      </div>
+      <div></div>
+      <div style="display:flex;flex-direction:column;justify-content:center;padding:0.4rem 0;">
+        <div style="font-size:9px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--green);margin-bottom:4px;">Product Insight</div>
+        <div style="font-size:11.5px;color:var(--ink3);line-height:1.6;">Shared intelligence commons — product, strategy, growth, and marketing draw from and contribute to the same signal foundation.</div>
+      </div>
+    </div>
+
+    <div style="display:grid;grid-template-columns:1fr 60px 1fr;gap:0;">
+      <div class="os-arrow">↓</div>
+      <div></div>
+      <div></div>
+    </div>
+
+    <!-- Row 3: Strategy -->
+    <div style="display:grid;grid-template-columns:1fr 60px 1fr;gap:0;align-items:stretch;">
+      <div class="os-box os-l3">
+        <div class="os-box-label">Product Strategy</div>
+        <div class="os-box-name">What we decide to do about it</div>
+        <div class="os-box-signals">capability decisions · prioritization · investment</div>
+      </div>
+      <div></div>
+      <div style="display:flex;flex-direction:column;justify-content:center;padding:0.4rem 0;">
+        <div style="font-size:9px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--amber);margin-bottom:4px;">Product Strategy</div>
+        <div style="font-size:11.5px;color:var(--ink3);line-height:1.6;">All teams arrive at strategy from the same evidence base. Alignment starts at the insight layer — before planning, before prioritization.</div>
+      </div>
+    </div>
+
+    <div style="display:grid;grid-template-columns:1fr 60px 1fr;gap:0;">
+      <div class="os-arrow">↓</div>
+      <div></div>
+      <div></div>
+    </div>
+
+    <!-- Row 4: Execution -->
+    <div style="display:grid;grid-template-columns:1fr 60px 1fr;gap:0;align-items:stretch;">
+      <div class="os-box os-l4">
+        <div class="os-box-label">Product Execution</div>
+        <div class="os-box-name">How we build and validate it</div>
+        <div class="os-box-signals">discovery · PRD · build · iterate</div>
+      </div>
+      <div></div>
+      <div style="display:flex;flex-direction:column;justify-content:center;padding:0.4rem 0;">
+        <div style="font-size:9px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--purple);margin-bottom:4px;">Product Execution</div>
+        <div style="font-size:11.5px;color:var(--ink3);line-height:1.6;">Demos, pilots, and proposals validate capabilities before full deployment. Teams compose from shared components.</div>
+      </div>
+    </div>
+
+    <div style="display:grid;grid-template-columns:1fr 60px 1fr;gap:0;">
+      <div class="os-arrow">↓</div>
+      <div></div>
+      <div></div>
+    </div>
+
+    <!-- Row 5: Validated capabilities -->
+    <div style="display:grid;grid-template-columns:1fr 60px 1fr;gap:0;align-items:center;">
+      <div style="background:rgba(59,158,255,0.05);border:1px dashed rgba(59,158,255,0.35);border-radius:var(--rsm);padding:0.4rem 1.1rem;display:flex;align-items:center;justify-content:center;">
+        <span style="font-size:10px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:rgba(59,158,255,0.7);">validated capabilities</span>
+      </div>
+      <div></div>
+      <div style="padding:0.4rem 0;">
+        <div style="font-size:11.5px;color:var(--ink3);line-height:1.6;font-style:italic;">Capability validated. Ready to ship. Outcome evidence begins accumulating.</div>
+      </div>
+    </div>
+
+    <div style="display:grid;grid-template-columns:1fr 60px 1fr;gap:0;">
+      <div class="os-arrow">↓</div>
+      <div></div>
+      <div></div>
+    </div>
+
+    <!-- Row 6: Outcomes -->
+    <div style="display:grid;grid-template-columns:1fr 60px 1fr;gap:0;align-items:stretch;">
+      <div class="os-box os-l5" id="os-outcomes">
+        <div class="os-box-label">Product Outcomes</div>
+        <div class="os-box-name">Whether it worked</div>
+        <div class="os-box-signals">adoption · impact · growth</div>
+      </div>
+      <div></div>
+      <div style="display:flex;flex-direction:column;justify-content:center;padding:0.4rem 0;">
+        <div style="font-size:9px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--pink);margin-bottom:4px;">Product Outcomes</div>
+        <div style="font-size:11.5px;color:var(--ink3);line-height:1.6;">Adoption, impact, and growth data become the new signal input. The loop closes. The system evolves.</div>
+      </div>
+    </div>
+
+
+
+    <!-- SVG feedback arc overlaid on left + arc columns -->
+    <svg id="loop-arc" style="position:absolute;top:0;left:0;width:calc(50% + 60px);height:100%;pointer-events:none;overflow:visible;" aria-hidden="true"></svg>
+
+  </div>
+
+  <script>
+  (function() {
+    function drawLoop() {
+      var signals  = document.getElementById('os-signals');
+      var outcomes = document.getElementById('os-outcomes');
+      var svg      = document.getElementById('loop-arc');
+      if (!signals || !outcomes || !svg) return;
+
+      var cRect = svg.parentElement.getBoundingClientRect();
+      var sRect = signals.getBoundingClientRect();
+      var oRect = outcomes.getBoundingClientRect();
+
+      var totalH = oRect.bottom - cRect.top + 4;
+      var svgW   = sRect.width + 60; // left box width + 60px arc space
+      svg.setAttribute('height', totalH + 'px');
+      svg.setAttribute('viewBox', '0 0 ' + svgW + ' ' + totalH);
+
+      var yTop    = sRect.top    - cRect.top + sRect.height / 2;
+      var yBottom = oRect.top    - cRect.top + oRect.height / 2;
+
+      // Arc bows into the 60px middle column
+      var xRight  = sRect.right - cRect.left;   // right edge of left box
+      var xBow    = xRight + 18;                 // shifted left — clear of text
+      var r       = 14;
+
+      var path = [
+        'M', xRight - 6, yTop,
+        'H', xBow - r,
+        'Q', xBow, yTop,    xBow, yTop + r,
+        'V', yBottom - r,
+        'Q', xBow, yBottom, xBow - r, yBottom,
+        'H', xRight - 6
+      ].join(' ');
+
+      var ax = xRight - 6;
+      var ay = yTop;
+      var arrow = [
+        'M', ax + 10, ay - 5,
+        'L', ax,      ay,
+        'L', ax + 10, ay + 5
+      ].join(' ');
+
+      var midY = yTop + (yBottom - yTop) / 2;
+      var gold = '#00aaff';
+
+      svg.innerHTML = [
+        '<path d="' + path  + '" fill="none" stroke="' + gold + '" stroke-width="2.5" stroke-dasharray="6 3" opacity="0.75"/>',
+        '<path d="' + arrow + '" fill="none" stroke="' + gold + '" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" opacity="0.95"/>',
+        '<text',
+        '  x="' + (xBow - 4) + '" y="' + midY + '"',
+        '  fill="' + gold + '" font-size="10" font-weight="600"',
+        '  font-family="Inter,sans-serif" letter-spacing="1.5"',
+        '  text-anchor="middle" opacity="0.9"',
+        '  transform="rotate(-90 ' + (xBow - 4) + ' ' + midY + ')"',
+        '>OUTCOMES → SIGNALS</text>'
+      ].join('\n');
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', drawLoop);
+    } else {
+      setTimeout(drawLoop, 80);
+    }
+    window.addEventListener('resize', drawLoop);
+  })();
+  </script>
+
+  <div style="display:flex;align-items:center;gap:0.6rem;padding:0.75rem 0;margin-bottom:0.5rem;border-bottom:1px solid var(--border);">
+    <div style="font-size:9px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--ink3);white-space:nowrap;">Shaped by</div>
+    <div style="display:flex;gap:6px;flex-wrap:wrap;">
+      <span class="influence ib-book">Thinking in Systems — Meadows</span>
+      <span class="influence ib-book">The Lean Startup — Ries</span>
+      <span class="influence">Continuous Discovery Habits — Torres</span>
+    </div>
+  </div>
+
+  <div class="os-map-note">
+    <div style="margin-bottom:1rem;">
+      <div style="font-size:15px;font-weight:600;color:var(--ink);margin-bottom:6px;">Four failure modes. One system built to close them.</div>
+      <div style="font-size:13px;color:var(--ink2);line-height:1.75;">The gap between good data and better decisions is a systems gap, not a data gap. The four cases that follow are not isolated failures — they are the four failure modes of a broken product operating system, identified in sequence and closed in turn.</div>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:6px;">
+
+      <div style="display:grid;grid-template-columns:1.3fr 1.9fr 0.1fr 1.3fr;gap:0.8rem;align-items:center;padding:0.65rem 1rem;background:rgba(255,170,68,0.06);border:1px solid var(--amber-border);border-radius:6px;">
+        <div style="font-size:11.5px;font-weight:500;color:var(--ink);">The Alignment Problem</div>
+        <div style="font-size:11px;color:var(--ink2);line-height:1.55;">Work begins without tracing to an outcome. No forcing function connects daily decisions to strategic intent.</div>
+        <div style="font-size:11px;color:var(--ink3);text-align:center;">→</div>
+        <div style="font-size:11px;font-weight:600;color:var(--amber);">Product Strategy</div>
+      </div>
+
+      <div style="display:grid;grid-template-columns:1.3fr 1.9fr 0.1fr 1.3fr;gap:0.8rem;align-items:center;padding:0.65rem 1rem;background:rgba(0,212,160,0.06);border:1px solid var(--green-bdr);border-radius:6px;">
+        <div style="font-size:11.5px;font-weight:500;color:var(--ink);">The Signal Problem</div>
+        <div style="font-size:11px;color:var(--ink2);line-height:1.55;">Each PM's discovery is a private asset — running in parallel with every other team's identical effort, disappearing at the end of the planning cycle.</div>
+        <div style="font-size:11px;color:var(--ink3);text-align:center;">→</div>
+        <div style="font-size:11px;font-weight:600;color:var(--green);">Product Insight</div>
+      </div>
+
+      <div style="display:grid;grid-template-columns:1.3fr 1.9fr 0.1fr 1.3fr;gap:0.8rem;align-items:center;padding:0.65rem 1rem;background:rgba(139,127,254,0.06);border:1px solid var(--purple-bdr);border-radius:6px;">
+        <div style="font-size:11.5px;font-weight:500;color:var(--ink);">The Reinvention Problem</div>
+        <div style="font-size:11px;color:var(--ink2);line-height:1.55;">Teams rebuild what already exists because knowledge isn't architected for discovery, composition, and reuse.</div>
+        <div style="font-size:11px;color:var(--ink3);text-align:center;">→</div>
+        <div style="font-size:11px;font-weight:600;color:var(--purple);">Product Execution</div>
+      </div>
+
+      <div style="display:grid;grid-template-columns:1.3fr 1.9fr 0.1fr 1.3fr;gap:0.8rem;align-items:center;padding:0.65rem 1rem;background:rgba(255,128,176,0.06);border:1px solid var(--pink-bdr);border-radius:6px;">
+        <div style="font-size:11.5px;font-weight:500;color:var(--ink);">The Adoption Problem</div>
+        <div style="font-size:11px;color:var(--ink2);line-height:1.55;">The system asks practitioners to invest before delivering value — compliance follows, then quietly disappears.</div>
+        <div style="font-size:11px;color:var(--ink3);text-align:center;">→</div>
+        <div style="font-size:11px;font-weight:600;"><span style="color:var(--pink);">Product Outcomes</span><span style="color:var(--ink3);"> → </span><span style="color:var(--blue);">Product Signals</span></div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+
+<div class="chapter">
+  <div class="ch-eyebrow">Case Study 01</div>
+  <div class="ch-title">The Alignment Problem</div>
+  <div style="display:inline-flex;align-items:center;gap:7px;margin-bottom:1.5rem;background:rgba(255,170,68,0.08);border:1px solid var(--amber-border);border-radius:4px;padding:4px 12px;">
+    <span style="font-size:9px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--amber);">System layer</span>
+    <span style="color:var(--gold-dim);font-size:10px;">·</span>
+    <span style="font-size:12px;font-weight:500;color:var(--ink);">Product Strategy</span>
+    <span style="color:var(--gold-dim);font-size:10px;">·</span>
+    <span style="font-size:11px;color:var(--ink3);">Makes the connection between feature requests and strategic outcomes mandatory, not assumed</span>
+  </div>
+
+  <!-- DIVIDER SLIDE -->
+  <div class="slide-block">
+
+    <div class="problem-stated">
+      <div class="ps-label">Problem stated plainly</div>
+      <div class="ps-text">
+        Teams work hard on things that don't advance the strategy. Not because they lack effort or intelligence, but because no mechanism exists that requires them to trace a feature request to a strategic outcome before work begins.
+      </div>
+    </div>
+
+    <div class="why-matters">
+      <div class="wm-label">Why it matters</div>
+      <div class="wm-text">"When the link between new features and strategic outcomes is implicit, prioritization becomes political. The loudest voice wins. The operating model is just a dressed up org chart."</div>
+    </div>
+  </div>
+
+  <!-- INSIGHT SLIDE -->
+  <div class="slide-block">
+
+    <div class="two-col" style="grid-template-columns:1fr 2fr;">
+      <div class="content-card">
+        <div class="cc-label">What made this non-obvious</div>
+        <div class="cc-text">
+          The problem presents as a communication failure. Every diagnosis points to "we need better all-hands" or "strategy needs to be clearer." Both are wrong.<br><br>
+          The real structure: communication fails because the artifact that initiates work contains no traceability requirement. There is no moment in the workflow where a PM <em>must</em> connect proposed work to a strategic outcome before the work begins. The connection is assumed, but almost never verified.<br><br>
+          <strong>Traceability has to be structural, not cultural.</strong> Culture doesn't survive a leadership transition. Utility does.
+          <div class="influences">
+            <span class="influence ib-book">Inspired — Cagan</span>
+            <span class="influence ib-book">The JTBD Playbook — Kalbach</span>
+            <span class="influence ib-method">Three Horizons — McKinsey</span>
+            <span class="influence ib-method">Impact Mapping — Adzic</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="decision-card">
+        <div class="cc-label">The design decision</div>
+        <div class="cc-text">
+          <strong>The Capabilities to Outcomes Mapping Template.</strong> Two distinct flow types — causal design flow and outcome validation feedback — make the loop explicit and self-correcting.
+        </div>
+
+        <svg width="100%" viewBox="0 0 740 500" style="margin-top:16px;overflow:visible;">
+          <defs>
+            <marker id="arr-s" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M2 2L8 5L2 8" fill="none" stroke="#9ab0cc" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></marker>
+            <marker id="arr-d" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M2 2L8 5L2 8" fill="none" stroke="#3b9eff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></marker>
+          </defs>
+
+          <!-- MACRO-OUTCOME y=10 -->
+          <rect x="210" y="10" width="160" height="30" rx="5" fill="rgba(224,92,92,0.13)" stroke="#e05c5c" stroke-width="1"/>
+          <text x="290" y="25" text-anchor="middle" dominant-baseline="central" style="font-size:11px;font-weight:500;fill:#e05c5c;">macro-outcome</text>
+
+          <!-- achieved through / contributes to: straight vertical -->
+          <line x1="282" y1="40" x2="282" y2="88" stroke="#9ab0cc" stroke-width="0.8" marker-end="url(#arr-s)"/>
+          <text x="272" y="67" text-anchor="end" style="font-size:8.5px;fill:#9ab0cc;">achieved through</text>
+          <line x1="298" y1="88" x2="298" y2="40" stroke="#3b9eff" stroke-width="0.8" stroke-dasharray="3 2" marker-end="url(#arr-d)"/>
+          <text x="308" y="67" text-anchor="start" style="font-size:8.5px;fill:#3b9eff;font-style:italic;">contributes to</text>
+
+          <!-- MICRO-OUTCOME y=90 -->
+          <rect x="210" y="90" width="160" height="30" rx="5" fill="rgba(32,178,170,0.1)" stroke="#20b2aa" stroke-width="1"/>
+          <text x="290" y="105" text-anchor="middle" dominant-baseline="central" style="font-size:11px;font-weight:500;fill:#20b2aa;">micro-outcome</text>
+
+          <!-- requires: straight vertical -->
+          <line x1="282" y1="120" x2="282" y2="178" stroke="#9ab0cc" stroke-width="0.8" marker-end="url(#arr-s)"/>
+          <text x="272" y="152" text-anchor="end" style="font-size:8.5px;fill:#9ab0cc;">requires</text>
+          <line x1="298" y1="178" x2="298" y2="120" stroke="#3b9eff" stroke-width="0.8" stroke-dasharray="3 2" marker-end="url(#arr-d)"/>
+          <text x="308" y="152" text-anchor="start" style="font-size:8.5px;fill:#3b9eff;font-style:italic;">achieves</text>
+
+          <!-- PERSONA far left y=180 -->
+          <rect x="10" y="180" width="100" height="30" rx="5" fill="rgba(212,135,74,0.12)" stroke="#d4874a" stroke-width="1"/>
+          <text x="60" y="195" text-anchor="middle" dominant-baseline="central" style="font-size:11px;font-weight:500;fill:#d4874a;">persona(s)</text>
+
+          <!-- performed by -->
+          <line x1="208" y1="195" x2="112" y2="195" stroke="#9ab0cc" stroke-width="0.8" marker-end="url(#arr-s)"/>
+          <text x="159" y="187" text-anchor="middle" style="font-size:8.5px;fill:#9ab0cc;">performed by</text>
+
+          <!-- JOBS TO BE DONE y=180 -->
+          <rect x="210" y="180" width="160" height="30" rx="5" fill="rgba(106,171,106,0.12)" stroke="#6aab6a" stroke-width="1"/>
+          <text x="290" y="195" text-anchor="middle" dominant-baseline="central" style="font-size:11px;font-weight:500;fill:#6aab6a;">jobs to be done</text>
+
+          <!-- MISSION-ALIGNED METRICS y=174 (taller box) -->
+          <rect x="470" y="180" width="160" height="30" rx="5" fill="rgba(122,122,207,0.12)" stroke="#7a7acf" stroke-width="1"/>
+          <text x="550" y="195" text-anchor="middle" dominant-baseline="central" style="font-size:11px;font-weight:500;fill:#7a7acf;">outcome-aligned metrics</text>
+
+          <!-- solid line: Metrics top center -> up then left to micro-outcome -->
+          <path d="M550 180 L550 105 L372 105" fill="none" stroke="#9ab0cc" stroke-width="0.8" marker-end="url(#arr-s)"/>
+          <text x="458" y="99" text-anchor="middle" style="font-size:8.5px;fill:#9ab0cc;">defined by</text>
+
+          <!-- blocked by: straight vertical from JTBD center to Pain center -->
+          <line x1="290" y1="210" x2="290" y2="258" stroke="#9ab0cc" stroke-width="0.8" marker-end="url(#arr-s)"/>
+          <text x="278" y="236" text-anchor="end" style="font-size:8.5px;fill:#9ab0cc;">blocked by</text>
+
+          <!-- defined by: from proposed capability up to metrics -->
+          <line x1="550" y1="258" x2="550" y2="212" stroke="#9ab0cc" stroke-width="0.8" marker-end="url(#arr-s)"/>
+          <text x="558" y="236" text-anchor="start" style="font-size:8.5px;fill:#9ab0cc;">measured by</text>
+
+          <!-- PAIN POINT y=260 -->
+          <rect x="210" y="260" width="160" height="30" rx="5" fill="rgba(196,122,176,0.12)" stroke="#c47ab0" stroke-width="1"/>
+          <text x="290" y="275" text-anchor="middle" dominant-baseline="central" style="font-size:11px;font-weight:500;fill:#c47ab0;">pain point / constraint</text>
+
+          <!-- PROPOSED SOLUTION y=260 -->
+          <rect x="470" y="260" width="160" height="30" rx="5" fill="rgba(181,160,48,0.13)" stroke="#b5a030" stroke-width="1"/>
+          <text x="550" y="275" text-anchor="middle" dominant-baseline="central" style="font-size:11px;font-weight:500;fill:#b5a030;">proposed capability</text>
+
+          <!-- resolved by -->
+          <line x1="370" y1="275" x2="468" y2="275" stroke="#9ab0cc" stroke-width="0.8" marker-end="url(#arr-s)"/>
+          <text x="419" y="269" text-anchor="middle" style="font-size:8.5px;fill:#9ab0cc;">resolved by</text>
+
+          <!-- FEEDBACK SIGNALS y=350 -->
+          <rect x="470" y="350" width="160" height="30" rx="5" fill="rgba(74,184,212,0.07)" stroke="#4ab8d4" stroke-width="0.8" stroke-dasharray="5 2"/>
+          <text x="550" y="365" text-anchor="middle" dominant-baseline="central" style="font-size:11px;font-weight:500;fill:#4ab8d4;">feedback signals</text>
+
+          <!-- CONTINUOUS MEASUREMENT y=394 -->
+          <rect x="470" y="394" width="160" height="30" rx="5" fill="rgba(155,109,181,0.08)" stroke="#9b6db5" stroke-width="0.8" stroke-dasharray="5 2"/>
+          <text x="550" y="409" text-anchor="middle" dominant-baseline="central" style="font-size:11px;font-weight:500;fill:#9b6db5;">continuous measurement</text>
+
+          <!-- refined through: Proposed -> Feedback solid -->
+          <line x1="550" y1="290" x2="550" y2="348" stroke="#9ab0cc" stroke-width="0.8" marker-end="url(#arr-s)"/>
+          <text x="556" y="320" text-anchor="start" style="font-size:8.5px;fill:#9ab0cc;">refined through</text>
+          <!-- Feedback -> Continuous solid -->
+          <line x1="550" y1="380" x2="550" y2="392" stroke="#9ab0cc" stroke-width="0.8" marker-end="url(#arr-s)"/>
+
+          <!-- dashed line from feedback signals right edge to assess outcome vertical -->
+          <line x1="630" y1="365" x2="700" y2="365" stroke="#3b9eff" stroke-width="0.8" stroke-dasharray="3 2"/>
+
+          <!-- assess outcome achievement: arc right side up to micro -->
+          <path d="M630 409 L700 409 L700 100 L372 100" fill="none" stroke="#3b9eff" stroke-width="0.8" stroke-dasharray="3 2" marker-end="url(#arr-d)"/>
+          <!-- extension: continues up to macro-outcome -->
+          <path d="M700 100 L700 25 L372 25" fill="none" stroke="#3b9eff" stroke-width="0.8" stroke-dasharray="3 2" marker-end="url(#arr-d)"/>
+          <text x="694" y="66" text-anchor="end" style="font-size:8.5px;fill:#3b9eff;font-style:italic;">assess outcome achievement</text>
+
+          <!-- unblocks persona — from bottom of proposed capability to bottom of persona -->
+          <path d="M510 290 L510 310 L60 310 L60 212" fill="none" stroke="#3b9eff" stroke-width="0.8" stroke-dasharray="3 2" marker-end="url(#arr-d)"/>
+          <text x="300" y="322" text-anchor="middle" style="font-size:8.5px;fill:#3b9eff;font-style:italic;">unblocks persona to achieve JTBD</text>
+          <!-- branch left of pain point, up to touch lower left of JTBD box -->
+          <path d="M210 310 L190 310 L190 210 L210 210" fill="none" stroke="#3b9eff" stroke-width="0.8" stroke-dasharray="3 2" marker-end="url(#arr-d)"/>
+
+          <!-- LEGEND -->
+          <line x1="10" y1="488" x2="34" y2="488" stroke="#9ab0cc" stroke-width="1.5"/>
+          <text x="38" y="492" style="font-size:9px;fill:#9ab0cc;">Intervention (causal design flow)</text>
+          <line x1="230" y1="488" x2="254" y2="488" stroke="#3b9eff" stroke-width="1" stroke-dasharray="3 2"/>
+          <text x="258" y="492" style="font-size:9px;fill:#9ab0cc;">Outcome validation &amp; feedback</text>
+        </svg>
+
+        <div style="margin-top:8px;font-size:11px;color:var(--ink3);font-style:italic;line-height:1.6;">You cannot complete it without making every connection explicit — both the causal design and the feedback loop that validates it.</div>
+
+        <div style="margin-top:16px;border-top:1px solid var(--border);padding-top:12px;">
+          <div style="display:grid;grid-template-columns:140px 1fr;gap:5px 12px;font-size:10px;line-height:1.6;">
+            <span style="color:#e05c5c;font-weight:600;">macro-outcome</span>
+            <span style="color:var(--ink3);">why the product exists</span>
+            <span style="color:#20b2aa;font-weight:600;">micro-outcome</span>
+            <span style="color:var(--ink3);">a measurable step towards a macro outcome</span>
+            <span style="color:#d4874a;font-weight:600;">persona(s)</span>
+            <span style="color:var(--ink3);">who is responsible for the action</span>
+            <span style="color:#6aab6a;font-weight:600;">jobs to be done</span>
+            <span style="color:var(--ink3);">what must be accomplished</span>
+            <span style="color:#c47ab0;font-weight:600;">pain point / constraint</span>
+            <span style="color:var(--ink3);">what blocks the job or outcome</span>
+            <span style="color:#b5a030;font-weight:600;">proposed capability</span>
+            <span style="color:var(--ink3);">what enables forward progress</span>
+            <span style="color:#7a7acf;font-weight:600;">outcome-aligned metrics</span>
+            <span style="color:var(--ink3);">how success is measured</span>
+            <span style="color:#4ab8d4;font-weight:600;">feedback signals</span>
+            <span style="color:var(--ink3);">evidence over time</span>
+            <span style="color:#9b6db5;font-weight:600;">continuous measurement</span>
+            <span style="color:var(--ink3);">how improvement is sustained</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- OUTCOME SLIDE -->
+  <div class="slide-block slide-block--outcome">
+
+    <div class="two-col">
+      <div class="content-card">
+        <div class="cc-label">What was built</div>
+        <ul class="built-list">
+          <li>
+            <span class="bl-num">1</span>
+            <div class="bl-content">
+              <div class="bl-title">Capabilities to Outcomes Mapping Template</div>
+              <div class="bl-desc">The forcing function. Eight logical layers, color-coded by type. Cannot be completed without making strategic connection explicit.</div>
+              <span class="bl-artifact">≈ PRFAQ</span>
+            </div>
+          </li>
+          <li>
+            <span class="bl-num">2</span>
+            <div class="bl-content">
+              <div class="bl-title">Outcomes Mapping Workshop</div>
+              <div class="bl-desc">Six-step facilitated session for teams that need to build the connection collaboratively before it can be made individually.</div>
+              <span class="bl-artifact">≈ Impact Mapping</span>
+            </div>
+          </li>
+          <li>
+            <span class="bl-num">3</span>
+            <div class="bl-content">
+              <div class="bl-title">Mission-Centered System Design (MCSD)</div>
+              <div class="bl-desc">A six-step repeatable methodology centered around outcomes — from defining the objective to measuring and adapting.</div>
+              <span class="bl-artifact">≈ NPI</span>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <div class="content-card">
+        <div class="cc-label">Outcome evidence</div>
+        <ul class="outcome-list">
+          <li><div class="ol-bar"></div><div><strong>Planning shifted from reactive to evidence-driven</strong> — across three horizons tied directly to strategic outcomes rather than immediate operational pressure.</div></li>
+          <li><div class="ol-bar"></div><div><strong>$8B+ pipeline governed by the system</strong> — prioritization and investment decisions traceable to strategic outcomes, not advocacy or assumption.</div></li>
+          <li><div class="ol-bar"></div><div><strong>The system has outlasted the people who mandated it.</strong> That's the test.</div></li>
+          <li><div class="ol-bar"></div><div><strong>$5M+ of proposed investment dollars repurposed</strong> to drive outcomes that mattered.</div></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="differently">
+      <div class="diff-label">What I'd do differently</div>
+      <div class="diff-text">Piloted with willing partners — but not necessarily the most influential ones. Early adopters were enthusiastic but didn't carry the organizational weight to accelerate broader adoption. The result was a longer, slower scaling period than necessary. I'd now identify true champions from the start — people whose adoption others watch and follow, not just people who are open to trying something new.</div>
+      <div class="diff-lesson">"Willingness to adopt and ability to scale adoption are not the same thing."</div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ════════════════════════════════════════════════════════
+     CASE STUDY 02 — THE SIGNAL PROBLEM
+════════════════════════════════════════════════════════ -->
+
+<div class="chapter">
+  <div class="ch-eyebrow">Case Study 02</div>
+  <div class="ch-title">The Signal Problem</div>
+  <div style="display:inline-flex;align-items:center;gap:7px;margin-bottom:1.5rem;background:rgba(0,212,160,0.08);border:1px solid var(--green-bdr);border-radius:4px;padding:4px 12px;">
+    <span style="font-size:9px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--green);">System layer</span>
+    <span style="color:var(--ink3);font-size:10px;">·</span>
+    <span style="font-size:12px;font-weight:500;color:var(--ink);">Product Insight</span>
+    <span style="color:var(--ink3);font-size:10px;">·</span>
+    <span style="font-size:11px;color:var(--ink3);">Each PM runs discovery in isolation — a shared commons turns isolated intelligence into org-wide shared capital</span>
+  </div>
+
+  <!-- DIVIDER SLIDE -->
+  <div class="slide-block">
+
+    <div class="problem-stated">
+      <div class="ps-label">Problem stated plainly</div>
+      <div class="ps-text">
+        Each PM runs their own discovery in isolation. Research cycles start from scratch every planning period — customer interviews, usage analysis, competitive signals — all custom-built per team, rarely shared, and typically discarded when the cycle ends. Across a multi-product org, five teams cover the same ground and reach different conclusions. The investment is duplicated. The intelligence is non-cumulative. The next PM starts from zero.
+      </div>
+    </div>
+
+    <div class="why-matters">
+      <div class="wm-label">Why it matters</div>
+      <div class="wm-text">"Every PM doing their own discovery is a sign the org hasn't prioritized intelligence as a shared asset. The cost isn't just duplication — it's the compounding decisions being made from five different interpretations of the same market."</div>
+    </div>
+  </div>
+
+  <!-- INSIGHT SLIDE -->
+  <div class="slide-block">
+
+    <div class="two-col">
+      <div class="content-card">
+        <div class="cc-label">What made this non-obvious</div>
+        <div class="cc-text">
+          The reflex is tooling: better dashboards, richer data, more reports. None of it addresses the structural problem — each PM's discovery is a private asset, running in parallel with every other team's identical effort and disappearing at the end of every cycle.<br><br>
+          <span>The real structure:</span> the operating model was never designed to make intelligence cumulative. There is no mechanism that captures what one PM learns and makes it available to the next. Every cycle starts from zero — not because PMs are siloed by choice, but because the system has no memory.<br><br>
+          Intelligence has to be shared by architecture, not by culture. Culture doesn't survive a planning cycle. A commons does.
+          <div class="influences">
+            <span class="influence ib-book">Building Analytics Teams — Thompson</span>
+            <span class="influence">Munger — signal vs noise</span>
+            <span class="influence">Balfour — retention loops</span>
+            <span class="influence">Continuous Discovery — Torres</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="decision-card">
+        <div class="cc-label">The design decision</div>
+        <div class="cc-text">
+          <strong>The Mission Intelligence Engine.</strong> The integrated knowledge-to-action platform of the operating model. Turns diverse, raw data into curated, continuously learning insight objects that feed action and measurable impact. Three orbiting capabilities around a central knowledge and orchestration core.
+        </div>
+
+        <div class="loop-diagram" style="margin-top:14px;">
+          <div class="ld-label">Three-capability architecture</div>
+          <div class="loop-steps">
+            <div class="loop-step">
+              <div class="ls-num" style="background:rgba(59,158,255,0.2);color:var(--blue);">D</div>
+              <div class="ls-content">
+                <div class="ls-name">Dovetail — Knowledge & Insight Curation</div>
+                <div class="ls-desc">All qualitative and quantitative signals — VoC surveys, contact center analytics, qualitative research, and market intelligence — land in Dovetail first. AI-assisted tagging and human-in-the-loop review refine raw data into structured insight objects: tagged, themed, deduplicated, and linked to evidence.</div>
+              </div>
+            </div>
+            <div class="loop-connector"></div>
+            <div class="loop-step">
+              <div class="ls-num" style="background:rgba(0,212,160,0.2);color:var(--green);">G</div>
+              <div class="ls-content">
+                <div class="ls-name">Glean — Enterprise Search & Retrieval</div>
+                <div class="ls-desc">Indexes Dovetail's curated insight objects continuously, making every validated finding discoverable via natural-language search — across Dovetail, Highspot, and marketing content. Signal is accessible at the point of decision, regardless of function.</div>
+              </div>
+            </div>
+            <div class="loop-connector"></div>
+            <div class="loop-step">
+              <div class="ls-num" style="background:rgba(139,127,254,0.2);color:var(--purple);">P</div>
+              <div class="ls-content">
+                <div class="ls-name">ProductBoard — Insight-to-Roadmap Orchestration</div>
+                <div class="ls-desc">Receives curated insight objects from Dovetail — never raw signals — and links them directly to features, themes, and product priorities. Closes the loop between what customers are experiencing and what gets built. Syncs prioritized features to Jira for execution, ensuring insights trace all the way to development and deployment. Replaces ad-hoc prioritization with a continuously updated, evidence-based product roadmap.</div>
+              </div>
+            </div>
+          </div>
+          <div style="margin-top:10px;font-size:11px;color:var(--ink3);font-style:italic;border-top:1px solid var(--border);padding-top:8px;">Foundation: Data Integration, Storage & Processing · Knowledge Graph · AI/ML · Orchestration</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- OUTCOME SLIDE -->
+  <div class="slide-block slide-block--outcome">
+
+    <div class="two-col">
+      <div class="content-card">
+        <div class="cc-label">What was built</div>
+        <ul class="built-list">
+          <li>
+            <span class="bl-num">1</span>
+            <div class="bl-content">
+              <div class="bl-title">Mission Intelligence Engine</div>
+              <div class="bl-desc">Three-capability intelligence platform: Curation (Dovetail), Retrieval (Glean), Orchestration (ProductBoard → Jira). Each tool selected against a specific job-to-be-done. Sits above individual teams — all functions draw from and contribute to the same foundation.</div>
+              <span class="bl-artifact">≈ Feedback Rivers — Rekhi</span>
+            </div>
+          </li>
+          <li>
+            <span class="bl-num">2</span>
+            <div class="bl-content">
+              <div class="bl-title">Insights to Outcomes Operating Model</div>
+              <div class="bl-desc">Signal coverage across five dimensions: Customer, Performance, Competitor, Market, and Future. Named owners per dimension.</div>
+              <span class="bl-artifact">≈ OODA Loop</span>
+            </div>
+          </li>
+          <li>
+            <span class="bl-num">3</span>
+            <div class="bl-content">
+              <div class="bl-title">Insights Hub + Persona Portal</div>
+              <div class="bl-desc">Shared intelligence commons with Discovery, Activation, and Foresight functions. 75+ continuously updated personas, journeys, blueprints, and competitor profiles — segmented by market, accessible across functions.</div>
+              <span class="bl-artifact">≈ Jobs Atlas — Kalbach</span>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <div class="content-card">
+        <div class="cc-label">Outcome evidence</div>
+        <ul class="outcome-list">
+          <li><div class="ol-bar"></div><div><strong>Planning moved from periodic to continuous.</strong> PMs shifted from periodic research sprints to working from a live intelligence layer — quarterly reviews now validate direction rather than set it from scratch.</div></li>
+          <li><div class="ol-bar"></div><div>The Insights Hub is the shared intelligence commons made real — with cross-functional access and zero parallel research cycles. Each PM's discovery compounds the intelligence available to every other PM, strategist, and marketer working from the same foundation.</div></li>
+          <li><div class="ol-bar"></div><div><strong>The intelligence engine identified the Contact Center Consolidation market 12 months before opportunity volume materialized.</strong> Not from a single signal — from the synthesis of disparate internal and external sources that no single team was connecting. The CCC Playbook was the GTM response. GSA GXCC was the first capture: a $100M floor Blanket Purchase Agreement with no ceiling. The market read was right. The system found it first.</div></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="differently">
+      <div class="diff-label">What I'd do differently</div>
+      <div class="diff-text">I underestimated the willingness to share data and insights. The existing culture incentivized individual success, not shared accomplishments. If I were to do it again, I would first focus on the value obtained through consolidated, centralized data — before blurring that value with the value derived from sharing personal insights. By rolling it as a package deal, I created unnecessary friction that, in hindsight, could have been avoided.</div>
+      <div class="diff-lesson">"Understand current incentives before attempting change, then be sure to account for them."</div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ════════════════════════════════════════════════════════
+     CASE STUDY 03 — THE REINVENTION PROBLEM
+════════════════════════════════════════════════════════ -->
+
+<div class="chapter">
+  <div class="ch-eyebrow">Case Study 03</div>
+  <div class="ch-title">The Reinvention Problem</div>
+  <div style="display:inline-flex;align-items:center;gap:7px;margin-bottom:1.5rem;background:rgba(139,127,254,0.08);border:1px solid var(--purple-bdr);border-radius:4px;padding:4px 12px;">
+    <span style="font-size:9px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--purple);">System layer</span>
+    <span style="color:var(--ink3);font-size:10px;">·</span>
+    <span style="font-size:12px;font-weight:500;color:var(--ink);">Product Execution</span>
+    <span style="color:var(--ink3);font-size:10px;">·</span>
+    <span style="font-size:11px;color:var(--ink3);">Turns knowledge into composable components — teams assemble, not reinvent</span>
+  </div>
+
+  <!-- DIVIDER SLIDE -->
+  <div class="slide-block">
+
+    <div class="problem-stated">
+      <div class="ps-label">Problem stated plainly</div>
+      <div class="ps-text">
+        Every product team solves the same problems from scratch. Not because they don't learn from each other — but because there's no architecture for reusing the solutions themselves. Onboarding flows, pricing models, integration patterns, instrumentation decisions — rebuilt by every team, against every new initiative, from first principles. The cost isn't just duplicated effort. It's inconsistent quality and solutions that reflect the team's current understanding, not the organization's accumulated one.
+      </div>
+    </div>
+
+    <div class="why-matters">
+      <div class="wm-label">Why it matters</div>
+      <div class="wm-text">"Reinvention isn't just inefficient. It's a signal that the organization doesn't trust its own knowledge. Every from-scratch solution is a vote of no confidence in everything that came before it."</div>
+    </div>
+  </div>
+
+  <!-- INSIGHT SLIDE -->
+  <div class="slide-block">
+
+    <div class="two-col">
+      <div class="content-card">
+        <div class="cc-label">What made this non-obvious</div>
+        <div class="cc-text">
+          The reinvention problem looks like a knowledge management problem. The reflex is documentation: capture what teams built, write up the decisions, store them somewhere central. None of it works. Documentation gets written and never retrieved. Wikis go stale. The next team doesn't find what the last team built — and even when they do, it isn't designed to be reused.<br><br>
+          <span>The real structure:</span> the problem isn't that knowledge isn't shared — it's that solutions aren't designed to be composable. A document describing how something was built is not a component that can be used again. You need an architecture for reuse, not a filing system for reference. The organization's accumulated work should be a building material, not a historical record.
+          <div class="influences">
+            <span class="influence ib-method">Platform Revolution — Parker, Van Alstyne</span>
+            <span class="influence ib-method">Atomic Design — Frost</span>
+            <span class="influence ib-method">Component architecture — software engineering</span>
+            <span class="influence ib-book">Inspired — Cagan</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="decision-card">
+        <div class="cc-label">The design decision</div>
+        <div class="cc-text">
+          <strong>Modular product architecture.</strong> Four layers, each with its own design standard, quality gate, and version history.
+        </div>
+
+        <div class="stack" style="margin-top:14px;">
+          <div class="stack-layer sl-1" style="padding:8px 12px;">
+            <span class="sl-tag">Layer 1</span>
+            <span class="sl-name">Components</span>
+            <span class="sl-desc">Atomic building blocks — one capability, one need</span>
+          </div>
+          <div style="height:6px;"></div>
+          <div class="stack-layer sl-2" style="padding:8px 12px;">
+            <span class="sl-tag">Layer 2</span>
+            <span class="sl-name">Frameworks</span>
+            <span class="sl-desc">Assembly patterns for combining components</span>
+          </div>
+          <div style="height:6px;"></div>
+          <div class="stack-layer sl-3" style="padding:8px 12px;">
+            <span class="sl-tag">Layer 3</span>
+            <span class="sl-name">Packages</span>
+            <span class="sl-desc">Assembled from frameworks for specific contexts</span>
+          </div>
+          <div style="height:6px;"></div>
+          <div class="stack-layer sl-4" style="padding:8px 12px;">
+            <span class="sl-tag">Layer 4</span>
+            <span class="sl-name">Shipped Capabilities</span>
+            <span class="sl-desc">Fully deployed — assembled, not invented</span>
+          </div>
+        </div>
+
+        <div class="cc-text" style="margin-top:14px;font-style:italic;color:var(--ink3);">The architecture doesn't prevent teams from building — it changes what building means. Teams stop designing from first principles and start composing from a shared foundation.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- OUTCOME SLIDE -->
+  <div class="slide-block slide-block--outcome">
+
+    <div class="two-col">
+      <div class="content-card">
+        <div class="cc-label">What was built</div>
+        <ul class="built-list">
+          <li>
+            <span class="bl-num">1</span>
+            <div class="bl-content">
+              <div class="bl-title">Component Repository</div>
+              <div class="bl-desc">Centralised, tagged, searchable library of reusable product components. Designed for composition and retrieval — not storage and reference.</div>
+              <span class="bl-artifact">≈ Design System</span>
+            </div>
+          </li>
+          <li>
+            <span class="bl-num">2</span>
+            <div class="bl-content">
+              <div class="bl-title">Contact Center Consolidation Playbook</div>
+              <div class="bl-desc">GTM response to the CCC market opportunity. Role-based navigation across eight decision domains, with pricing, risk, and phase roadmap built in — a product that closes deals, not a document that describes a solution.</div>
+              <span class="bl-artifact">≈ PRD</span>
+            </div>
+          </li>
+          <li>
+            <span class="bl-num">3</span>
+            <div class="bl-content">
+              <div class="bl-title">Use Case Evaluation Criteria & Library</div>
+              <div class="bl-desc">Emerging use cases by market and differentiation. Seven criteria connecting individual capability decisions to strategic market positioning — applied continuously.</div>
+              <span class="bl-artifact">≈ Opportunity Scoring</span>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <div class="content-card">
+        <div class="cc-label">Outcome evidence</div>
+        <ul class="outcome-list">
+          <li><div class="ol-bar"></div><div><strong>Visibility.</strong> For the first time, teams could see what was actively being built across the org. Features that would have been built in parallel — without either team knowing — were caught before duplication occurred. Awareness turned out to be more valuable than reuse.</div></li>
+          <li><div class="ol-bar"></div><div><strong>Prevention.</strong> Fragmentation was stopped before it could form. The CCC Playbook established the pattern early enough that subsequent teams composed from a shared foundation rather than building their own version alongside it.</div></li>
+          <li><div class="ol-bar"></div><div><strong>Discipline.</strong> Investment decisions improved measurably. The evaluation criteria replaced instinct-driven feature requests with an evidence standard — single-source justification no longer cleared the bar. Teams had a shared framework for what was worth building and a shared language for saying no.</div></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="differently">
+      <div class="diff-label">What I'd do differently</div>
+      <div class="diff-text">The Component Repository became a maintenance problem faster than expected — because we never defined ownership at the component level. Without clear owners, the volume quickly exceeded what a central team could sustain. The lesson wasn't to build better tooling. It was to resolve ownership before scaling the library. Every component needs a named owner before it ships — not as governance overhead, but as the minimum viable condition for it to remain trustworthy.</div>
+      <div class="diff-lesson">"A component without an owner is a component on borrowed time."</div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ════════════════════════════════════════════════════════
+     CASE STUDY 04 — THE ADOPTION PROBLEM
+════════════════════════════════════════════════════════ -->
+
+<div class="chapter">
+  <div class="ch-eyebrow">Case Study 04</div>
+  <div class="ch-title">The Adoption Problem</div>
+  <div style="display:inline-flex;align-items:center;gap:7px;margin-bottom:1.5rem;background:rgba(255,128,176,0.08);border:1px solid var(--pink-bdr);border-radius:4px;padding:4px 12px;">
+    <span style="font-size:9px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--pink);">System layer</span>
+    <span style="color:var(--ink3);font-size:10px;">·</span>
+    <span style="font-size:12px;font-weight:500;color:var(--ink);">Outcomes → Signals feedback loop</span>
+    <span style="color:var(--ink3);font-size:10px;">·</span>
+    <span style="font-size:11px;color:var(--ink3);">Closes the loop — practitioners return to the system only when it earns that return</span>
+  </div>
+
+  <!-- DIVIDER SLIDE -->
+  <div class="slide-block">
+
+    <div class="problem-stated">
+      <div class="ps-label">Problem stated plainly</div>
+      <div class="ps-text">
+        Mandated systems die within a quarter. The pattern is consistent: leadership announces a new process, practitioners comply during rollout, usage drops, the mandate is quietly abandoned. The system gets blamed. The real problem was the adoption model — specifically, that compliance was mistaken for adoption and borrowed trust for earned utility.
+      </div>
+    </div>
+
+    <div class="why-matters">
+      <div class="wm-label">Why it matters</div>
+      <div class="wm-text">"Mandated adoption is borrowed trust. It runs out the moment the mandate author leaves the room. The only durable adoption is earned — where practitioners use the system because it makes their work better, not because someone is watching."</div>
+    </div>
+  </div>
+
+  <!-- INSIGHT SLIDE -->
+  <div class="slide-block">
+
+    <div class="two-col">
+      <div class="content-card">
+        <div class="cc-label">What made this non-obvious</div>
+        <div class="cc-text">
+          Adoption looks like a change management problem. The reflex: run more training, communicate better, find more champions. None of it works if the system requires behavior change before delivering value. You're asking practitioners to invest before they've seen a return. That's not a change management failure — it's a sequencing failure.<br><br>
+          <span>The real structure:</span> value has to come first. Trust follows utility. The system has to solve a problem the practitioner feels <em>today</em> — not a problem leadership wants solved eventually.<br><br>
+          Compliance isn't adoption. They produce identical-looking metrics for about six weeks. Then they diverge completely.
+          <div class="influences">
+            <span class="influence">Munger — incentive before instruction</span>
+            <span class="influence">Kotter — change sequencing</span>
+            <span class="influence">Fogg Behavior Model — Fogg</span>
+            <span class="influence ib-method">Product-Led Growth — Bush</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="decision-card">
+        <div class="cc-label">The design decision</div>
+        <div class="cc-text">
+          <strong>Five-phase rollout model built around value sequencing, not process sequencing.</strong>
+        </div>
+
+        <div class="phases">
+          <div class="phase-row">
+            <div class="ph-num">1</div>
+            <div class="ph-content">
+              <div class="ph-name">Diagnose</div>
+              <div class="ph-desc">Find the felt pain, not the assumed pain. Interview before designing.</div>
+              <div class="ph-insight">The system has to solve what practitioners actually experience, not what leadership thinks they experience.</div>
+            </div>
+          </div>
+          <div class="phase-row">
+            <div class="ph-num">2</div>
+            <div class="ph-content">
+              <div class="ph-name">Co-Create</div>
+              <div class="ph-desc">Practitioners are architects of the system, not recipients of it.</div>
+              <div class="ph-insight">PMs who build the standard own it. PMs who receive it comply with it.</div>
+            </div>
+          </div>
+          <div class="phase-row">
+            <div class="ph-num">3</div>
+            <div class="ph-content">
+              <div class="ph-name">Pilot</div>
+              <div class="ph-desc">One clean before/after story that travels. Proof before scale.</div>
+            </div>
+          </div>
+          <div class="phase-row">
+            <div class="ph-num">4</div>
+            <div class="ph-content">
+              <div class="ph-name">Champion Network</div>
+              <div class="ph-desc">PM-to-PM adoption is faster and more durable than top-down rollout.</div>
+              <div class="ph-insight">Peer credibility outlasts executive mandate.</div>
+            </div>
+          </div>
+          <div class="phase-row">
+            <div class="ph-num">5</div>
+            <div class="ph-content">
+              <div class="ph-name">Institutionalize</div>
+              <div class="ph-desc">Embed in onboarding. Make the right way the easy way.</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- OUTCOME SLIDE -->
+  <div class="slide-block slide-block--outcome">
+
+    <div class="two-col">
+      <div class="content-card">
+        <div class="cc-label">What was built</div>
+        <ul class="built-list">
+          <li>
+            <span class="bl-num">1</span>
+            <div class="bl-content">
+              <div class="bl-title">Co-Creation Workshops</div>
+              <div class="bl-desc">Structured sessions that did four jobs simultaneously: diagnosed felt pain rather than assumed pain, surfaced the existing incentive structure, identified natural champions, and transferred ownership to practitioners before the system was designed. The workshop output wasn't a document — it was a coalition.</div>
+              <span class="bl-artifact">≈ Discovery Sprint</span>
+            </div>
+          </li>
+          <li>
+            <span class="bl-num">2</span>
+            <div class="bl-content">
+              <div class="bl-title">Champion-First Rollout Model</div>
+              <div class="bl-desc">Champions identified during co-creation were sequenced into the rollout before broader release. Not because they were enthusiastic — because their peers watched them. Influential practitioners adopting voluntarily carried more weight than any mandate could.</div>
+              <span class="bl-artifact">≈ Diffusion of Innovations — Rogers</span>
+            </div>
+          </li>
+          <li>
+            <span class="bl-num">3</span>
+            <div class="bl-content">
+              <div class="bl-title">Incentive Mapping</div>
+              <div class="bl-desc">Before designing what practitioners were being asked to do differently, the existing incentive structure was mapped. The system was then designed to deliver value before asking for behavior change — advocacy was the outcome of value delivery, not a precondition for it.</div>
+              <span class="bl-artifact">≈ Behavior Design — Fogg</span>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <div class="content-card">
+        <div class="cc-label">Outcome evidence</div>
+        <ul class="outcome-list">
+          <li><div class="ol-bar"></div><div><strong>75+ practitioners adopted voluntarily across five portfolios. Zero mandates.</strong> The co-creation model meant practitioners weren't recipients of the system — they were its architects. Ownership preceded rollout.</div></li>
+          <li><div class="ol-bar"></div><div><strong>Peer adoption proved faster and more durable than top-down rollout.</strong> Champions identified during workshops became the adoption engine. Credibility traveled horizontally, not vertically.</div></li>
+          <li><div class="ol-bar"></div><div><strong>The system survived two leadership transitions without a reset.</strong> Not because it was mandated — because practitioners found it useful enough to protect. Nobody defended the system. They defended what it enabled them to do. That's the only version of a lasting mark that holds.</div></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="differently">
+      <div class="diff-label">What I'd do differently</div>
+      <div class="diff-text">Scheduled retrospectives quarterly when early adoption needed monthly. By the time feedback arrived, patterns were entrenched. I'd now run a five-minute pulse check every two weeks in the first quarter — not to evaluate the system, but to catch drift before it compounds.</div>
+      <div class="diff-lesson">"Early adoption is when the system is most fragile and the feedback loop is most critical. Those two facts are in direct tension."</div>
+    </div>
+  </div>
+</div>
+
+<!-- ════════════════════════════════════════════════════════
+     OPERATING PRINCIPLES
+════════════════════════════════════════════════════════ -->
+
+<div class="bridge-section" style="margin-top:3rem;margin-bottom:0;">
+  <div class="bridge-eyebrow">Operating Principles</div>
+  <div class="bridge-title" style="font-size:1.4rem;">Three principles. Every context. Same results.</div>
+  <div style="font-size:15.5px;color:var(--ink3);margin-top:0.75rem;margin-bottom:0;">Shaped through years of iteration and tested under pressure.</div>
+
+  <div style="display:flex;flex-direction:column;gap:8px;margin-top:1.5rem;">
+
+    <div style="display:grid;grid-template-columns:3px 1fr;gap:1rem;align-items:start;background:var(--bg3);border:1px solid var(--border);border-radius:var(--r);padding:1.4rem 1.6rem;">
+      <div style="background:var(--blue);border-radius:2px;align-self:stretch;margin-top:3px;"></div>
+      <div>
+        <div style="font-size:16px;font-weight:600;color:var(--ink);margin-bottom:8px;">Products reflect systems.</div>
+        <div style="font-size:13.5px;color:var(--ink2);line-height:1.8;">The product you ship is a direct expression of the organizational system that produced it. Misaligned teams build misaligned products. Siloed intelligence produces products that don't learn. Reactive operating models produce features that don't compound. You cannot build a better product without first building a better system. Trying to fix the product without fixing the operating system is the most common and most expensive mistake in product operations.</div>
+      </div>
+    </div>
+
+    <div style="display:grid;grid-template-columns:3px 1fr;gap:1rem;align-items:start;background:var(--bg3);border:1px solid var(--border);border-radius:var(--r);padding:1.4rem 1.6rem;">
+      <div style="background:var(--blue);border-radius:2px;align-self:stretch;margin-top:3px;"></div>
+      <div>
+        <div style="font-size:16px;font-weight:600;color:var(--ink);margin-bottom:8px;">Outcomes before capabilities.</div>
+        <div style="font-size:13.5px;color:var(--ink2);line-height:1.8;">A capability without a traced outcome is a guess wearing a roadmap. Before any capability is designed, the outcome it enables must be named, the pain point it addresses must be verified, and the metric that will confirm it worked must be agreed upon. This is not a planning ritual — it's the forcing function that separates strategy from activity. Organizations that skip this step don't lack execution. They lack direction.</div>
+      </div>
+    </div>
+
+    <div style="display:grid;grid-template-columns:3px 1fr;gap:1rem;align-items:start;background:var(--bg3);border:1px solid var(--border);border-radius:var(--r);padding:1.4rem 1.6rem;">
+      <div style="background:var(--blue);border-radius:2px;align-self:stretch;margin-top:3px;"></div>
+      <div>
+        <div style="font-size:16px;font-weight:600;color:var(--ink);margin-bottom:8px;">Ownership determines durability.</div>
+        <div style="font-size:13.5px;color:var(--ink2);line-height:1.8;">Mandated systems survive until the mandate changes. Systems practitioners own because they're useful survive leadership transitions, reorgs, and budget cycles. The only operating model worth building is one practitioners would protect voluntarily — not because they're required to, but because losing it would make them worse at their jobs. If that condition isn't met, the system isn't done yet.</div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ════════════════════════════════════════════════════════
+     PUBLISHED WORK
+════════════════════════════════════════════════════════ -->
+
+<div class="bridge-section" style="margin-top:3rem;margin-bottom:0;">
+  <div class="bridge-eyebrow">Published Work & Shipped Product</div>
+  <div class="bridge-title" style="font-size:1.4rem;">This body of work has been externally validated</div>
+  <div class="bridge-body" style="margin-bottom:1.8rem;">
+    Built in practice and published externally, with the case studies serving as evidence.
+  </div>
+
+  <div style="display:flex;flex-direction:column;gap:10px;">
+
+    <div style="display:grid;grid-template-columns:3px 1fr;gap:1rem;align-items:start;background:var(--bg3);border:1px solid var(--border);border-radius:var(--r);padding:1.2rem 1.4rem;">
+      <div style="background:#8899aa;border-radius:2px;align-self:stretch;margin-top:3px;"></div>
+      <div>
+        <div style="font-size:10px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:#8899aa;margin-bottom:5px;">MeriTalk × Maximus · 2025 · <span style="font-weight:400;color:var(--ink3);letter-spacing:0;text-transform:none;font-size:10px;">Primary Author / Contributor</span></div>
+        <div style="font-size:14.5px;font-weight:600;color:var(--ink);margin-bottom:5px;">Government Service Delivery Reimagined: Operationalizing Intelligence-Driven Customer Experience</div>
+        <div style="font-size:13px;color:var(--ink2);line-height:1.75;">Establishes the case for real-time, context-aware service delivery over batch-mode efficiency metrics. Introduces the intelligence feedback loop as a continuous signal architecture: capture data across touchpoints, synthesize context in a unified intelligence hub, trigger event-driven actions, learn and adapt in real time. The structural logic — streaming signals, shared context, action at the point of decision — maps directly to the <span style="color:var(--green);font-weight:500;">Signal Problem</span> case study and the operating system described in this body of work.</div>
+      </div>
+    </div>
+
+    <div style="display:grid;grid-template-columns:3px 1fr;gap:1rem;align-items:start;background:var(--bg3);border:1px solid var(--border);border-radius:var(--r);padding:1.2rem 1.4rem;">
+      <div style="background:#8899aa;border-radius:2px;align-self:stretch;margin-top:3px;"></div>
+      <div>
+        <div style="font-size:10px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:#8899aa;margin-bottom:5px;">MeriTalk × Maximus · 2025 · <span style="font-weight:400;color:var(--ink3);letter-spacing:0;text-transform:none;font-size:10px;">Primary Author / Contributor</span></div>
+        <div style="font-size:14.5px;font-weight:600;color:var(--ink);margin-bottom:5px;">Improving Citizen Services Through Mission-Centered System Design</div>
+        <div style="font-size:13px;color:var(--ink2);line-height:1.75;">Names and defines Mission-Centered System Design (MCSD) as a published methodology: mission-first, outcome-driven, adaptive by design, system-wide alignment. The four principles map directly to the four failure modes addressed in this body of work. The methodology behind the <span style="color:var(--amber);font-weight:500;">Alignment Problem</span>, <span style="color:var(--green);font-weight:500;">Signal Problem</span>, and <span style="color:var(--purple);font-weight:500;">Reinvention Problem</span> case studies.</div>
+      </div>
+    </div>
+
+    <div style="display:grid;grid-template-columns:3px 1fr;gap:1rem;align-items:start;background:var(--bg3);border:1px solid var(--border);border-radius:var(--r);padding:1.2rem 1.4rem;">
+      <div style="background:#8899aa;border-radius:2px;align-self:stretch;margin-top:3px;"></div>
+      <div>
+        <div style="font-size:10px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:#8899aa;margin-bottom:5px;">Maximus · 2025 · <span style="font-weight:400;color:var(--ink3);letter-spacing:0;text-transform:none;font-size:10px;">Primary Author / Contributor</span></div>
+        <div style="font-size:14.5px;font-weight:600;color:var(--ink);margin-bottom:5px;">Building Trust Through Better CX: Consolidation Transforms Government Contact Centers</div>
+        <div style="font-size:13px;color:var(--ink2);line-height:1.75;">Applies the intelligence architecture framework to contact center consolidation — fragmented systems, disconnected data, and the compounding cost of siloed operations. The consolidation playbook in Case Study 3 (the <span style="color:var(--purple);font-weight:500;">Reinvention Problem</span>) is the operational implementation of the framework described here.</div>
+      </div>
+    </div>
+
+    <div style="display:grid;grid-template-columns:3px 1fr;gap:1rem;align-items:start;background:var(--bg3);border:1px solid var(--border);border-radius:var(--r);padding:1.2rem 1.4rem;">
+      <div style="background:#8899aa;border-radius:2px;align-self:stretch;margin-top:3px;"></div>
+      <div>
+        <div style="font-size:10px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:#8899aa;margin-bottom:5px;">Federal News Network × Maximus · November 2025 · <span style="font-weight:400;color:var(--ink3);letter-spacing:0;text-transform:none;font-size:10px;">Contributor</span></div>
+        <div style="font-size:14.5px;font-weight:600;color:var(--ink);margin-bottom:5px;">Turning the Government's Contact Centers into Engines of Intelligence to Power Federal Modernization Efforts</div>
+        <div style="font-size:13px;color:var(--ink2);line-height:1.75;">Federal News Network's Forward-Thinking Government series. Evan Davis, Executive Managing Director for Federal Growth at Maximus, articulates three strategic priorities — contact centers as intelligence hubs, omnichannel consolidation, and AI-decoded citizen intent — drawing directly on the frameworks in this body of work. The three priorities map to the <span style="color:var(--green);font-weight:500;">Signal Problem</span>, the <span style="color:var(--purple);font-weight:500;">Reinvention Problem</span>, and the <span style="color:var(--amber);font-weight:500;">Alignment Problem</span> respectively.</div>
+      </div>
+    </div>
+
+    <div style="display:grid;grid-template-columns:3px 1fr;gap:1rem;align-items:start;background:var(--bg3);border:1px solid var(--border);border-radius:var(--r);padding:1.2rem 1.4rem;">
+      <div style="background:#8899aa;border-radius:2px;align-self:stretch;margin-top:3px;"></div>
+      <div>
+        <div style="font-size:10px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:#8899aa;margin-bottom:5px;">Maximus Product Launch · 2024 · <span style="font-weight:400;color:var(--ink3);letter-spacing:0;text-transform:none;font-size:10px;">Design, Pricing & GTM Lead</span></div>
+        <div style="font-size:14.5px;font-weight:600;color:var(--ink);margin-bottom:5px;">Total Experience Management (TXM) — FedRAMP Moderate, AI-Enabled Enterprise Platform</div>
+        <div style="font-size:13px;color:var(--ink2);line-height:1.75;">AJ led design, pricing, and go-to-market strategy for TXM — Maximus' flagship enterprise platform for contact center consolidation and intelligence-driven CX. Built with a core team and packaged in partnership with a consultant agency. FedRAMP Moderate certified; modular and scalable across commercial tool integrations. The platform that operationalizes the <span style="color:var(--green);font-weight:500;">Signal Problem</span> and <span style="color:var(--purple);font-weight:500;">Reinvention Problem</span> case studies at enterprise scale — and the product referenced by executive leadership in the Federal News Network interview as the technical foundation for federal CX modernization.</div>
+      </div>
+    </div>
+
+    <div style="display:grid;grid-template-columns:3px 1fr;gap:1rem;align-items:start;background:var(--bg3);border:1px solid var(--border);border-radius:var(--r);padding:1.2rem 1.4rem;">
+      <div style="background:#8899aa;border-radius:2px;align-self:stretch;margin-top:3px;"></div>
+      <div>
+        <div style="font-size:10px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:#8899aa;margin-bottom:5px;">Maximus · 2025 · <span style="font-weight:400;color:var(--ink3);letter-spacing:0;text-transform:none;font-size:10px;">Advisor / Contributor</span></div>
+        <div style="font-size:14.5px;font-weight:600;color:var(--ink);margin-bottom:5px;">How AI-Powered Federal Service Delivery Can Take Agencies from Reactive to Proactive, at Scale</div>
+        <div style="font-size:13px;color:var(--ink2);line-height:1.75;">Authored by two of AJ's direct reports, with AJ as advisor and contributor. Advances the MCSD framework into AI-specific service delivery: predictive citizen engagement, mission-centered AI governance, and iterative feedback loops that keep AI aligned to real-world needs. The Signal Problem intelligence architecture applied at the AI layer — from reactive to proactive, at enterprise scale. Maps to the <span style="color:var(--green);font-weight:500;">Signal Problem</span> and <span style="color:var(--amber);font-weight:500;">Alignment Problem</span> case studies.</div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+</body>
+</html>
