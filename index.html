@@ -24,12 +24,12 @@
   --red:      #ff5577;
   --red-bg:   rgba(255,85,119,0.08);
   --red-bdr:  rgba(255,85,119,0.28);
-  --pink:     #ff80b0;
-  --pink-bg:  rgba(255,128,176,0.07);
-  --pink-bdr: rgba(255,128,176,0.28);
-  --green:    #00d4a0;
-  --green-bg: rgba(0,212,160,0.08);
-  --green-bdr:rgba(0,212,160,0.28);
+  --pink:     #00d4a0;
+  --pink-bg:  rgba(0,212,160,0.07);
+  --pink-bdr: rgba(0,212,160,0.28);
+  --green:    #ff80b0;
+  --green-bg: rgba(255,128,176,0.08);
+  --green-bdr:rgba(255,128,176,0.28);
   --blue:     #3b9eff;
   --blue-bg:  rgba(59,158,255,0.08);
   --blue-bdr: rgba(59,158,255,0.28);
@@ -42,9 +42,12 @@
   --purple:   #8b7ffe;
   --purple-bg:rgba(139,127,254,0.08);
   --purple-bdr:rgba(139,127,254,0.28);
-  --teal:     #00c49a;
-  --teal-bg:  rgba(0,196,154,0.08);
-  --teal-bdr: rgba(0,196,154,0.28);
+  --teal:     #e040fb;
+  --teal-bg:  rgba(224,64,251,0.09);
+  --teal-bdr: rgba(224,64,251,0.32);
+  --yellow:     #e040fb;
+  --yellow-bg:  rgba(224,64,251,0.09);
+  --yellow-bdr: rgba(224,64,251,0.32);
 }
 
 html { font-size: 16px; }
@@ -205,9 +208,9 @@ body {
   border-color: var(--gold-bdr);
 }
 .influence.ib-method {
-  color: var(--green);
-  background: var(--green-bg);
-  border-color: var(--green-bdr);
+  color: var(--pink);
+  background: var(--pink-bg);
+  border-color: var(--pink-bdr);
 }
 .influence.ib-artifact {
   color: var(--amber);
@@ -246,7 +249,7 @@ body {
 .chain-node { font-size: 10.5px; font-weight: 500; padding: 5px 10px; border-radius: 4px; white-space: nowrap; }
 .chain-arrow { color: var(--ink3); font-size: 12px; padding: 0 3px; flex-shrink: 0; }
 .cn-1 { background: rgba(200,165,90,0.15); color: var(--gold); border: 1px solid var(--gold-bdr); }
-.cn-2 { background: rgba(90,144,96,0.12); color: #8dc898; border: 1px solid var(--green-bdr); }
+.cn-2 { background: rgba(90,144,96,0.12); color: #8dc898; border: 1px solid var(--pink-bdr); }
 .cn-3 { background: rgba(74,128,184,0.12); color: #8ab0d8; border: 1px solid var(--blue-bdr); }
 .cn-4 { background: rgba(192,64,48,0.1); color: #e09080; border: 1px solid var(--red-bdr); }
 .cn-5 { background: rgba(160,100,180,0.12); color: #c098d8; border: 1px solid rgba(160,100,180,0.3); }
@@ -295,7 +298,7 @@ body {
 .sl-2 { background: rgba(90,144,96,0.06); }
 .sl-3 { background: rgba(74,128,184,0.06); }
 .sl-4 { background: rgba(160,100,180,0.06); }
-.sl-teal { background: rgba(0,196,154,0.06); }
+.sl-teal { background: rgba(224,64,251,0.06); }
 
 .phases { display: flex; flex-direction: column; gap: 4px; margin-top: 1rem; }
 .phase-row { display: flex; align-items: flex-start; gap: 12px; padding: 0.9rem 1.1rem; background: var(--bg3); border-radius: var(--rsm); border: 1px solid var(--border); }
@@ -335,19 +338,19 @@ body {
 .os-arrow { display: flex; justify-content: center; align-items: center; padding: 4px 0; color: rgba(59,158,255,0.75); font-size: 20px; line-height: 1; }
 .os-l1 { background: rgba(59,158,255,0.07); border-color: var(--blue-bdr); }
 .os-l1 .os-box-label { color: var(--blue); }
-.os-l2 { background: rgba(0,212,160,0.07); border-color: var(--green-bdr); }
-.os-l2 .os-box-label { color: var(--green); }
+.os-l2 { background: rgba(255,128,176,0.07); border-color: var(--green-bdr); }
+.os-l2 .os-box-label { color: var(--pink); }
 .os-l3 { background: rgba(255,170,68,0.07); border-color: var(--amber-border); }
 .os-l3 .os-box-label { color: var(--amber); }
 .os-l4 { background: rgba(124,92,252,0.07); border-color: var(--purple-bdr); }
 .os-l4 .os-box-label { color: var(--purple); }
-.os-l5 { background: rgba(255,128,176,0.07); border-color: var(--pink-bdr); }
-.os-l5 .os-box-label { color: var(--pink); }
+.os-l5 { background: rgba(0,212,160,0.07); border-color: var(--pink-bdr); }
+.os-l5 .os-box-label { color: var(--green); }
 .os-map-note { font-size: 13px; color: var(--ink3); line-height: 1.75; border-top: 1px solid var(--border); padding-top: 1rem; margin-top: 0.5rem; }
 .os-map-note strong { color: var(--ink2); font-weight: 500; }
 
-.survival { background: var(--green-bg); border: 1px solid var(--green-bdr); border-radius: var(--r); padding: 1.5rem 1.8rem; margin-top: 1.2rem; }
-.sv-label { font-size: 10px; font-weight: 600; letter-spacing: 0.13em; text-transform: uppercase; color: var(--green); margin-bottom: 0.65rem; }
+.survival { background: var(--pink-bg); border: 1px solid var(--pink-bdr); border-radius: var(--r); padding: 1.5rem 1.8rem; margin-top: 1.2rem; }
+.sv-label { font-size: 10px; font-weight: 600; letter-spacing: 0.13em; text-transform: uppercase; color: var(--pink); margin-bottom: 0.65rem; }
 .sv-text { font-size: 14.5px; color: #6de8c0; line-height: 1.8; }
 
 .slide-block--outcome .content-card { background: rgba(255,255,255,0.04); border-color: rgba(255,255,255,0.1); }
@@ -434,7 +437,7 @@ body {
       <div style="font-size:8.5px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--pink);margin-bottom:5px;">Case Study 04</div>
       <div style="font-size:11px;font-weight:600;color:var(--ink);line-height:1.3;">The Adoption Problem</div>
     </div>
-    <div style="background:rgba(0,196,154,0.07);border:1px solid var(--teal-bdr);border-top:3px solid var(--teal);border-radius:6px;padding:10px 12px;">
+    <div style="background:rgba(245,200,66,0.07);border:1px solid var(--teal-bdr);border-top:3px solid var(--teal);border-radius:6px;padding:10px 12px;">
       <div style="font-size:8.5px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--teal);margin-bottom:5px;">Case Study 05</div>
       <div style="font-size:11px;font-weight:600;color:var(--ink);line-height:1.3;">The AI Augmentation Problem</div>
     </div>
@@ -488,7 +491,7 @@ body {
       </div>
       <div></div>
       <div style="display:flex;flex-direction:column;justify-content:center;padding:0.4rem 0;">
-        <div style="font-size:9px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--green);margin-bottom:4px;">Product Insight</div>
+        <div style="font-size:9px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--pink);margin-bottom:4px;">Product Insight</div>
         <div style="font-size:11.5px;color:var(--ink3);line-height:1.6;">Shared intelligence commons — product, strategy, growth, and marketing draw from and contribute to the same signal foundation.</div>
       </div>
     </div>
@@ -545,7 +548,7 @@ body {
       </div>
       <div></div>
       <div style="display:flex;flex-direction:column;justify-content:center;padding:0.4rem 0;">
-        <div style="font-size:9px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--pink);margin-bottom:4px;">Product Outcomes</div>
+        <div style="font-size:9px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--green);margin-bottom:4px;">Product Outcomes</div>
         <div style="font-size:11.5px;color:var(--ink3);line-height:1.6;">Adoption, impact, and growth data become the new signal input. The loop closes. The system evolves.</div>
       </div>
     </div>
@@ -608,7 +611,7 @@ body {
         <div style="font-size:11.5px;font-weight:500;color:var(--ink);">The Signal Problem</div>
         <div style="font-size:11px;color:var(--ink2);line-height:1.55;">Each PM's discovery is a private asset — running in parallel with every other team's identical effort, disappearing at the end of the planning cycle.</div>
         <div style="font-size:11px;color:var(--ink3);text-align:center;">→</div>
-        <div style="font-size:11px;font-weight:600;color:var(--green);">Product Insight</div>
+        <div style="font-size:11px;font-weight:600;color:var(--pink);">Product Insight</div>
       </div>
       <div style="display:grid;grid-template-columns:1.3fr 1.9fr 0.1fr 1.3fr;gap:0.8rem;align-items:center;padding:0.65rem 1rem;background:rgba(139,127,254,0.06);border:1px solid var(--purple-bdr);border-radius:6px;">
         <div style="font-size:11.5px;font-weight:500;color:var(--ink);">The Reinvention Problem</div>
@@ -620,9 +623,9 @@ body {
         <div style="font-size:11.5px;font-weight:500;color:var(--ink);">The Adoption Problem</div>
         <div style="font-size:11px;color:var(--ink2);line-height:1.55;">The system asks practitioners to invest before delivering value — compliance follows, then quietly disappears.</div>
         <div style="font-size:11px;color:var(--ink3);text-align:center;">→</div>
-        <div style="font-size:11px;font-weight:600;"><span style="color:var(--pink);">Product Outcomes</span><span style="color:var(--ink3);"> → </span><span style="color:var(--blue);">Product Signals</span></div>
+        <div style="font-size:11px;font-weight:600;"><span style="color:var(--green);">Product Outcomes</span><span style="color:var(--ink3);"> → </span><span style="color:var(--blue);">Product Signals</span></div>
       </div>
-      <div style="display:grid;grid-template-columns:1.3fr 1.9fr 0.1fr 1.3fr;gap:0.8rem;align-items:center;padding:0.65rem 1rem;background:rgba(0,196,154,0.06);border:1px solid var(--teal-bdr);border-radius:6px;">
+      <div style="display:grid;grid-template-columns:1.3fr 1.9fr 0.1fr 1.3fr;gap:0.8rem;align-items:center;padding:0.65rem 1rem;background:rgba(245,200,66,0.06);border:1px solid var(--teal-bdr);border-radius:6px;">
         <div style="font-size:11.5px;font-weight:500;color:var(--ink);">The AI Augmentation Problem</div>
         <div style="font-size:11px;color:var(--ink2);line-height:1.55;">AI is adopted as isolated experiments that never compound — each workflow optimizes locally, none feeds the intelligence layer.</div>
         <div style="font-size:11px;color:var(--ink3);text-align:center;">→</div>
@@ -789,7 +792,7 @@ body {
 <div class="chapter">
   <div class="ch-eyebrow">Case Study 02</div>
   <div class="ch-title">The Signal Problem</div>
-  <div style="display:inline-flex;align-items:center;gap:7px;margin-bottom:1.5rem;background:rgba(0,212,160,0.08);border:1px solid var(--green-bdr);border-radius:4px;padding:4px 12px;">
+  <div style="display:inline-flex;align-items:center;gap:7px;margin-bottom:1.5rem;background:rgba(255,128,176,0.08);border:1px solid var(--green-bdr);border-radius:4px;padding:4px 12px;">
     <span style="font-size:9px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--green);">System layer</span>
     <span style="color:var(--ink3);font-size:10px;">·</span>
     <span style="font-size:12px;font-weight:500;color:var(--ink);">Product Insight</span>
@@ -967,7 +970,7 @@ body {
 <div class="chapter">
   <div class="ch-eyebrow">Case Study 04</div>
   <div class="ch-title">The Adoption Problem</div>
-  <div style="display:inline-flex;align-items:center;gap:7px;margin-bottom:1.5rem;background:rgba(255,128,176,0.08);border:1px solid var(--pink-bdr);border-radius:4px;padding:4px 12px;">
+  <div style="display:inline-flex;align-items:center;gap:7px;margin-bottom:1.5rem;background:rgba(0,212,160,0.08);border:1px solid var(--pink-bdr);border-radius:4px;padding:4px 12px;">
     <span style="font-size:9px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--pink);">System layer</span>
     <span style="color:var(--ink3);font-size:10px;">·</span>
     <span style="font-size:12px;font-weight:500;color:var(--ink);">Outcomes → Signals feedback loop</span>
@@ -1044,7 +1047,7 @@ body {
 <div class="chapter">
   <div class="ch-eyebrow">Case Study 05</div>
   <div class="ch-title">The AI Augmentation Problem</div>
-  <div style="display:inline-flex;align-items:center;gap:7px;margin-bottom:1.5rem;background:rgba(0,196,154,0.08);border:1px solid var(--teal-bdr);border-radius:4px;padding:4px 12px;">
+  <div style="display:inline-flex;align-items:center;gap:7px;margin-bottom:1.5rem;background:rgba(245,200,66,0.08);border:1px solid var(--teal-bdr);border-radius:4px;padding:4px 12px;">
     <span style="font-size:9px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--teal);">System layer</span>
     <span style="color:var(--ink3);font-size:10px;">·</span>
     <span style="font-size:12px;font-weight:500;color:var(--ink);">Intelligence Compounding</span>
@@ -1088,7 +1091,7 @@ body {
           <div style="height:4px;"></div>
           <div class="stack-layer sl-4"><span class="sl-tag" style="color:var(--purple);min-width:90px;">AG-4</span><span class="sl-name">AI Operating Model Design</span><span class="sl-desc">Roles, governance structure, human-agent interaction</span></div>
           <div style="height:4px;"></div>
-          <div class="stack-layer" style="background:rgba(0,196,154,0.06);border:1px solid var(--border);border-radius:var(--rsm);display:flex;align-items:center;gap:12px;padding:0.8rem 1.1rem;">
+          <div class="stack-layer" style="background:rgba(245,200,66,0.06);border:1px solid var(--border);border-radius:var(--rsm);display:flex;align-items:center;gap:12px;padding:0.8rem 1.1rem;">
             <span class="sl-tag" style="color:var(--teal);min-width:90px;">AG-5</span><span class="sl-name">Agent Design &amp; Pilot</span><span class="sl-desc">One running agent. Proof before scale.</span>
           </div>
           <div style="height:4px;"></div>
@@ -1114,10 +1117,10 @@ body {
       <div class="content-card">
         <div class="cc-label">Outcome evidence</div>
         <ul class="outcome-list">
-          <li><div class="ol-bar" style="background:var(--teal);"></div><div><strong>AI workflows compound rather than drift.</strong> Governance designed before deployment means every output is validated against defined criteria — exceptions feed back as signal rather than disappearing as noise.</div></li>
-          <li><div class="ol-bar" style="background:var(--teal);"></div><div><strong>Intelligence became retrievable at the point of decision.</strong> Glean indexed the full intelligence commons — eliminating the gap between what the organization had learned and what practitioners could access when it mattered.</div></li>
-          <li><div class="ol-bar" style="background:var(--teal);"></div><div><strong>Human judgment stayed in the loop without slowing the system.</strong> Defining override protocols and confidence thresholds before deployment meant practitioners trusted the outputs — because they understood exactly where the system acted autonomously and where it deferred to them.</div></li>
-          <li><div class="ol-bar" style="background:var(--teal);"></div><div><strong>Deployed in a FedRAMP-authorized environment</strong> — proving the architecture holds under compliance, security, and audit requirements that commercial deployments rarely face. The governance model is more rigorous, not less.</div></li>
+          <li><div class="ol-bar"></div><div><strong>AI workflows compound rather than drift.</strong> Governance designed before deployment means every output is validated against defined criteria — exceptions feed back as signal rather than disappearing as noise.</div></li>
+          <li><div class="ol-bar"></div><div><strong>Intelligence became retrievable at the point of decision.</strong> Glean indexed the full intelligence commons — eliminating the gap between what the organization had learned and what practitioners could access when it mattered.</div></li>
+          <li><div class="ol-bar"></div><div><strong>Human judgment stayed in the loop without slowing the system.</strong> Defining override protocols and confidence thresholds before deployment meant practitioners trusted the outputs — because they understood exactly where the system acted autonomously and where it deferred to them.</div></li>
+          <li><div class="ol-bar"></div><div><strong>Deployed in a FedRAMP-authorized environment</strong> — proving the architecture holds under compliance, security, and audit requirements that commercial deployments rarely face. The governance model is more rigorous, not less.</div></li>
         </ul>
       </div>
     </div>
@@ -1170,7 +1173,7 @@ body {
       <div>
         <div style="font-size:10px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:#8899aa;margin-bottom:5px;">MeriTalk × Maximus · 2025 · <span style="font-weight:400;color:var(--ink3);letter-spacing:0;text-transform:none;font-size:10px;">Primary Author / Contributor</span></div>
         <div style="font-size:14.5px;font-weight:600;color:var(--ink);margin-bottom:5px;">Government Service Delivery Reimagined: Operationalizing Intelligence-Driven Customer Experience</div>
-        <div style="font-size:13px;color:var(--ink2);line-height:1.75;">Establishes the case for real-time, context-aware service delivery over batch-mode efficiency metrics. Introduces the intelligence feedback loop as a continuous signal architecture: capture data across touchpoints, synthesize context in a unified intelligence hub, trigger event-driven actions, learn and adapt in real time. The structural logic — streaming signals, shared context, action at the point of decision — maps directly to the <span style="color:var(--green);font-weight:500;">Signal Problem</span> case study and the operating system described in this body of work.</div>
+        <div style="font-size:13px;color:var(--ink2);line-height:1.75;">Establishes the case for real-time, context-aware service delivery over batch-mode efficiency metrics. Introduces the intelligence feedback loop as a continuous signal architecture: capture data across touchpoints, synthesize context in a unified intelligence hub, trigger event-driven actions, learn and adapt in real time. The structural logic — streaming signals, shared context, action at the point of decision — maps directly to the <span style="color:var(--green);font-weight:500;">Signal Problem</span> and <span style="color:var(--teal);font-weight:500;">AI Augmentation Problem</span> case studies and the operating system described in this body of work.</div>
       </div>
     </div>
     <div style="display:grid;grid-template-columns:3px 1fr;gap:1rem;align-items:start;background:var(--bg3);border:1px solid var(--border);border-radius:var(--r);padding:1.2rem 1.4rem;">
@@ -1178,7 +1181,7 @@ body {
       <div>
         <div style="font-size:10px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:#8899aa;margin-bottom:5px;">MeriTalk × Maximus · 2025 · <span style="font-weight:400;color:var(--ink3);letter-spacing:0;text-transform:none;font-size:10px;">Primary Author / Contributor</span></div>
         <div style="font-size:14.5px;font-weight:600;color:var(--ink);margin-bottom:5px;">Improving Citizen Services Through Mission-Centered System Design</div>
-        <div style="font-size:13px;color:var(--ink2);line-height:1.75;">Names and defines Mission-Centered System Design (MCSD) as a published methodology: mission-first, outcome-driven, adaptive by design, system-wide alignment. The four principles map directly to the four failure modes addressed in this body of work. The methodology behind the <span style="color:var(--amber);font-weight:500;">Alignment Problem</span>, <span style="color:var(--green);font-weight:500;">Signal Problem</span>, and <span style="color:var(--purple);font-weight:500;">Reinvention Problem</span> case studies.</div>
+        <div style="font-size:13px;color:var(--ink2);line-height:1.75;">Names and defines Mission-Centered System Design (MCSD) as a published methodology: mission-first, outcome-driven, adaptive by design, system-wide alignment. The four principles map directly to the four failure modes addressed in this body of work. The methodology behind the <span style="color:var(--amber);font-weight:500;">Alignment Problem</span>, <span style="color:var(--green);font-weight:500;">Signal Problem</span>, <span style="color:var(--purple);font-weight:500;">Reinvention Problem</span>, and <span style="color:var(--pink);font-weight:500;">Adoption Problem</span> case studies.</div>
       </div>
     </div>
     <div style="display:grid;grid-template-columns:3px 1fr;gap:1rem;align-items:start;background:var(--bg3);border:1px solid var(--border);border-radius:var(--r);padding:1.2rem 1.4rem;">
@@ -1194,7 +1197,7 @@ body {
       <div>
         <div style="font-size:10px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:#8899aa;margin-bottom:5px;">Federal News Network × Maximus · November 2025 · <span style="font-weight:400;color:var(--ink3);letter-spacing:0;text-transform:none;font-size:10px;">Contributor</span></div>
         <div style="font-size:14.5px;font-weight:600;color:var(--ink);margin-bottom:5px;">Turning the Government's Contact Centers into Engines of Intelligence to Power Federal Modernization Efforts</div>
-        <div style="font-size:13px;color:var(--ink2);line-height:1.75;">Federal News Network's Forward-Thinking Government series. Evan Davis, Executive Managing Director for Federal Growth at Maximus, articulates three strategic priorities — contact centers as intelligence hubs, omnichannel consolidation, and AI-decoded citizen intent — drawing directly on the frameworks in this body of work. The three priorities map to the <span style="color:var(--green);font-weight:500;">Signal Problem</span>, the <span style="color:var(--purple);font-weight:500;">Reinvention Problem</span>, and the <span style="color:var(--amber);font-weight:500;">Alignment Problem</span> respectively.</div>
+        <div style="font-size:13px;color:var(--ink2);line-height:1.75;">Federal News Network's Forward-Thinking Government series. Evan Davis, Executive Managing Director for Federal Growth at Maximus, articulates three strategic priorities — contact centers as intelligence hubs, omnichannel consolidation, and AI-decoded citizen intent — drawing directly on the frameworks in this body of work. The three priorities map to the <span style="color:var(--green);font-weight:500;">Signal Problem</span>, the <span style="color:var(--purple);font-weight:500;">Reinvention Problem</span>, and the <span style="color:var(--amber);font-weight:500;">Alignment Problem</span> respectively — and the AI-decoded citizen intent priority maps directly to the <span style="color:var(--teal);font-weight:500;">AI Augmentation Problem</span>.</div>
       </div>
     </div>
     <div style="display:grid;grid-template-columns:3px 1fr;gap:1rem;align-items:start;background:var(--bg3);border:1px solid var(--border);border-radius:var(--r);padding:1.2rem 1.4rem;">
@@ -1202,7 +1205,7 @@ body {
       <div>
         <div style="font-size:10px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:#8899aa;margin-bottom:5px;">Maximus Product Launch · 2024 · <span style="font-weight:400;color:var(--ink3);letter-spacing:0;text-transform:none;font-size:10px;">Design, Pricing &amp; GTM Lead</span></div>
         <div style="font-size:14.5px;font-weight:600;color:var(--ink);margin-bottom:5px;">Total Experience Management (TXM) — FedRAMP Moderate, AI-Enabled Enterprise Platform</div>
-        <div style="font-size:13px;color:var(--ink2);line-height:1.75;">AJ led design, pricing, and go-to-market strategy for TXM — Maximus' flagship enterprise platform for contact center consolidation and intelligence-driven CX. Built with a core team and packaged in partnership with a consultant agency. FedRAMP Moderate certified; modular and scalable across commercial tool integrations. The platform that operationalizes the <span style="color:var(--green);font-weight:500;">Signal Problem</span> and <span style="color:var(--purple);font-weight:500;">Reinvention Problem</span> case studies at enterprise scale — and the product referenced by executive leadership in the Federal News Network interview as the technical foundation for federal CX modernization.</div>
+        <div style="font-size:13px;color:var(--ink2);line-height:1.75;">AJ led design, pricing, and go-to-market strategy for TXM — Maximus' flagship enterprise platform for contact center consolidation and intelligence-driven CX. Built with a core team and packaged in partnership with a consultant agency. FedRAMP Moderate certified; modular and scalable across commercial tool integrations. The platform that operationalizes the <span style="color:var(--green);font-weight:500;">Signal Problem</span>, <span style="color:var(--purple);font-weight:500;">Reinvention Problem</span>, <span style="color:var(--pink);font-weight:500;">Adoption Problem</span>, and <span style="color:var(--teal);font-weight:500;">AI Augmentation Problem</span> case studies at enterprise scale — and the product referenced by executive leadership in the Federal News Network interview as the technical foundation for federal CX modernization.</div>
       </div>
     </div>
     <div style="display:grid;grid-template-columns:3px 1fr;gap:1rem;align-items:start;background:var(--bg3);border:1px solid var(--border);border-radius:var(--r);padding:1.2rem 1.4rem;">
@@ -1210,7 +1213,7 @@ body {
       <div>
         <div style="font-size:10px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:#8899aa;margin-bottom:5px;">Maximus · 2025 · <span style="font-weight:400;color:var(--ink3);letter-spacing:0;text-transform:none;font-size:10px;">Advisor / Contributor</span></div>
         <div style="font-size:14.5px;font-weight:600;color:var(--ink);margin-bottom:5px;">How AI-Powered Federal Service Delivery Can Take Agencies from Reactive to Proactive, at Scale</div>
-        <div style="font-size:13px;color:var(--ink2);line-height:1.75;">Authored by two of AJ's direct reports, with AJ as advisor and contributor. Advances the MCSD framework into AI-specific service delivery: predictive citizen engagement, mission-centered AI governance, and iterative feedback loops that keep AI aligned to real-world needs. The Signal Problem intelligence architecture applied at the AI layer — from reactive to proactive, at enterprise scale. Maps to the <span style="color:var(--green);font-weight:500;">Signal Problem</span>, <span style="color:var(--amber);font-weight:500;">Alignment Problem</span>, and <span style="color:var(--teal);font-weight:500;">AI Augmentation Problem</span> case studies.</div>
+        <div style="font-size:13px;color:var(--ink2);line-height:1.75;">Authored by two of AJ's direct reports, with AJ as advisor and contributor. Advances the MCSD framework into AI-specific service delivery: predictive citizen engagement, mission-centered AI governance, and iterative feedback loops that keep AI aligned to real-world needs. The Signal Problem intelligence architecture applied at the AI layer — from reactive to proactive, at enterprise scale. Maps to the <span style="color:var(--green);font-weight:500;">Signal Problem</span>, <span style="color:var(--amber);font-weight:500;">Alignment Problem</span>, <span style="color:var(--pink);font-weight:500;">Adoption Problem</span>, and <span style="color:var(--teal);font-weight:500;">AI Augmentation Problem</span> case studies.</div>
       </div>
     </div>
   </div>
